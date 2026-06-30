@@ -5,11 +5,11 @@ import { RegisterForm } from "@/features/auth/components/register-form";
 export default function RegisterPage() {
   return (
     <main
-      className="flex h-screen w-screen items-center justify-center bg-gray-100 p-4 md:p-6 lg:p-8 text-[#111111] overflow-hidden"
+      className="flex min-h-[calc(100vh-64px)] w-full items-center justify-center text-[#111111]"
       style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
     >
-      <section className="flex w-full max-w-[1040px] h-[90vh] max-h-[680px] min-h-[560px] flex-col gap-6 rounded-[40px] bg-[#fdf8f8] p-4 shadow-xl md:flex-row md:p-6 overflow-hidden">
-        <div className="relative hidden w-1/2 overflow-hidden rounded-[32px] bg-[#eaf4eb] md:block h-full">
+      <section className="flex w-full max-w-[1040px] flex-col gap-6 rounded-[40px] bg-[#fdf8f8] p-4 shadow-xl md:flex-row md:p-6">
+        <div className="relative hidden w-1/2 overflow-hidden rounded-[32px] bg-[#eaf4eb] md:block">
           <Image
             alt="Illustration of uploading task evidence"
             className="h-full w-full object-cover"
@@ -21,7 +21,7 @@ export default function RegisterPage() {
           />
         </div>
 
-        <div className="flex w-full flex-col justify-center px-4 py-6 md:w-1/2 md:px-8 lg:px-12 h-full overflow-y-auto">
+        <div className="flex w-full flex-col justify-center px-4 py-6 md:w-1/2 md:px-8 lg:px-12">
           <div className="mx-auto w-full max-w-[340px]">
             <div className="mb-4 flex items-center justify-center gap-2 text-[#111111]">
               <svg
