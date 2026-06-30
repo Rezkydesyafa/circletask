@@ -23,7 +23,7 @@ export default function RegisterPage() {
 
         <div className="flex w-full flex-col justify-center px-4 py-6 md:w-1/2 md:px-8 lg:px-12 h-full overflow-y-auto">
           <div className="mx-auto w-full max-w-[340px]">
-            <div className="mb-6 flex items-center justify-center gap-2 text-[#111111]">
+            <div className="mb-4 flex items-center justify-center gap-2 text-[#111111]">
               <svg
                 className="h-5 w-5"
                 fill="none"
@@ -39,8 +39,8 @@ export default function RegisterPage() {
               <span className="text-lg font-bold">CircleTask</span>
             </div>
 
-            <div className="mb-5 text-center">
-              <h1 className="mb-2 text-[26px] font-bold leading-tight text-[#111111]">Buat Akun Baru</h1>
+            <div className="mb-4 text-center">
+              <h1 className="mb-1 text-2xl font-bold leading-tight text-[#111111]">Buat Akun Baru</h1>
               <p className="text-xs text-[#5c5f6a]">Mulai kelola tugas kelompok dengan CircleTask.</p>
             </div>
 
