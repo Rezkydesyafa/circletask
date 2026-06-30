@@ -11,19 +11,38 @@ CircleTask adalah aplikasi manajemen tugas kelompok berbasis bukti kerja. Projec
 - `docs/ui-and-agent-guidelines.md` - UI, component map, coding rules, dan agent rules.
 - `docs/backlog.md` - backlog per sprint.
 - `docs/github-mvp-plan.md` - rencana GitHub Project, milestones, labels, dan daftar issue MVP.
+- `supabase/README.md` - catatan setup Supabase, migration baseline, storage bucket, dan aturan env.
 
 ## GitHub Issue dan Project
 
-Gunakan script berikut setelah repository GitHub dibuat dan GitHub CLI sudah login:
+Repository GitHub:
+
+```text
+https://github.com/Rezkydesyafa/circletask
+```
+
+Gunakan wrapper berikut setelah GitHub CLI sudah login:
 
 ```powershell
-.\scripts\create-github-mvp-issues.ps1 -Repo "OWNER/REPO"
+.\scripts\setup-github-issues.ps1
 ```
 
 Untuk melihat perintah tanpa membuat issue:
 
 ```powershell
-.\scripts\create-github-mvp-issues.ps1 -Repo "OWNER/REPO" -DryRun
+.\scripts\setup-github-issues.ps1 -DryRun
+```
+
+Jika ingin menjalankan script utama secara eksplisit:
+
+```powershell
+.\scripts\create-github-mvp-issues.ps1 -Repo "Rezkydesyafa/circletask"
+```
+
+Jika ingin menambahkan issue ke GitHub Project v2:
+
+```powershell
+.\scripts\setup-github-issues.ps1 -ProjectOwner "Rezkydesyafa" -ProjectNumber 1
 ```
 
 ## Development Setup
@@ -55,6 +74,7 @@ Copy-Item .env.example .env.local
 ```
 
 Isi `NEXT_PUBLIC_SUPABASE_URL` dan `NEXT_PUBLIC_SUPABASE_ANON_KEY` sebelum mengaktifkan auth dan akses data Supabase.
+Lihat `supabase/README.md` untuk urutan menjalankan migration dan storage policy.
 
 ## Struktur Folder Rekomendasi
 

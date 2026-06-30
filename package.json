@@ -7,7 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "pnpm test:unit",
+    "test:unit": "tsc -p tsconfig.test.json && node --test .tmp/tests/features/contributions/calculate.test.js .tmp/tests/features/tasks/state-machine.test.js",
+    "test:contribution": "tsc -p tsconfig.test.json && node --test .tmp/tests/features/contributions/calculate.test.js",
+    "test:supabase": "tsc -p tsconfig.integration.json && node --test .tmp/integration/scripts/supabase-smoke-test.js",
+    "supabase:migrate": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/apply-supabase-backend.ps1",
+    "supabase:migrate:local": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/apply-supabase-backend.ps1 -Local -GenerateTypes",
+    "supabase:types": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/generate-supabase-types.ps1 -Local"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

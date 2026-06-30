@@ -40,6 +40,7 @@ Kolom utama:
 
 - `id`
 - `user_id`
+- `email`
 - `full_name`
 - `avatar_url`
 - `created_at`
@@ -272,6 +273,21 @@ Catatan implementasi:
 - RLS harus memakai membership `group_members` sebagai dasar akses.
 - Storage policy harus mengikuti membership group dari task terkait.
 - Semua mutation penting harus membuat `activity_logs`.
+- Flow create group dan join group memakai RPC database agar pembuatan `groups` + `group_members` berjalan atomik dan join tetap wajib memakai `join_code`.
+- Insert langsung `group_members` role `member` tidak dibuka untuk client umum.
+
+## Database Helper dan Guard
+
+Helper RPC/trigger baseline:
+
+- `generate_group_join_code()` membuat kode join unik.
+- `create_group_with_leader(group_name, group_description)` membuat group, leader membership, dan activity log.
+- `join_group_by_code(target_join_code)` memvalidasi join code, mencegah duplicate membership, membuat membership, dan activity log.
+- `is_group_member(group_id, user_id)` dan `is_group_leader(group_id, user_id)` dipakai RLS dan server guard.
+- `validate_task_evidence_limit()` membatasi maksimal 3 bukti per task.
+- `validate_task_submit_review()` mencegah status `submit_review` tanpa minimal satu bukti.
+- `validate_task_reassignment_member()` memastikan user asal dan tujuan reassign adalah anggota group task.
+- `validate_assigned_member_task_update()` memastikan anggota yang ditugaskan hanya dapat mengubah status progress task miliknya, bukan metadata task.
 
 ## Storage Rules
 
@@ -324,6 +340,20 @@ Activity log:
 
 - Wajib dibuat untuk task dibuat, task diassign, status berubah, bukti diupload, submit review, revisi, approve, reassign, komentar ditambahkan, dan laporan diexport.
 - Log tidak boleh diedit oleh user.
+
+## Backend Action Coverage
+
+Backend/logic yang tersedia:
+
+- Auth: register, login, logout, request reset password, update profile minimal.
+- Groups: create group atomik via RPC, join group via join code, update group, remove member leader-only.
+- Projects: create project dan update project leader-only.
+- Tasks: create task, update task leader-only, mark assigned task `in_progress`, create comment, grouped task board query.
+- Evidences: create signed upload target, save file metadata, add external evidence link, private signed URL query.
+- Reviews: submit review, approve, revision, reassign, pending review query, review history, reassign history.
+- Activity: reusable activity log helper dan activity timeline query.
+- Contributions: scoring dari task `approved`/`done` dengan penalti deadline dan revisi.
+- Reports: preview data aggregation, React PDF `ContributionReportPDF`, export action base64 PDF, dan activity log untuk export laporan.
 
 ## Aturan Teknis
 
