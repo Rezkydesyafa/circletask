@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import type { Route } from "next";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -59,7 +58,7 @@ export function RegisterForm() {
       }
 
       if (result.redirectTo) {
-        router.push(result.redirectTo as Route);
+        router.push(result.redirectTo);
         router.refresh();
       }
     });
