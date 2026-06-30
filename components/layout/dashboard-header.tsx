@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { LogoutButton } from "@/features/auth/components/logout-button";
 
 export function DashboardHeader() {
   return (
@@ -13,9 +14,12 @@ export function DashboardHeader() {
       <div className="hidden text-sm text-muted-foreground lg:block">
         Task management kelompok berbasis bukti kerja
       </div>
-      <Button asChild variant="outline" size="sm">
-        <Link href="/profile">Profil</Link>
-      </Button>
+      <div className="flex items-center gap-2">
+        <Button asChild variant="outline" size="sm">
+          <Link href="/profile">Profil</Link>
+        </Button>
+        <LogoutButton />
+      </div>
     </header>
   );
 }
