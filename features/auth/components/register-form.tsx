@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { Route } from "next";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -58,7 +59,7 @@ export function RegisterForm() {
       }
 
       if (result.redirectTo) {
-        router.push(result.redirectTo);
+        router.push(result.redirectTo as Route);
         router.refresh();
       }
     });
@@ -66,7 +67,7 @@ export function RegisterForm() {
 
   return (
     <>
-      <form className="space-y-6" onSubmit={onSubmit}>
+      <form className="space-y-4" onSubmit={onSubmit}>
       <input type="hidden" {...form.register("avatarUrl")} />
 
       <div>
@@ -81,7 +82,7 @@ export function RegisterForm() {
           {...form.register("fullName")}
         />
         {form.formState.errors.fullName ? (
-          <p className="text-sm text-destructive">{form.formState.errors.fullName.message}</p>
+          <p className="text-sm text-destructive mt-1">{form.formState.errors.fullName.message}</p>
         ) : null}
       </div>
 
@@ -98,34 +99,36 @@ export function RegisterForm() {
           {...form.register("email")}
         />
         {form.formState.errors.email ? (
-          <p className="text-sm text-destructive">{form.formState.errors.email.message}</p>
+          <p className="text-sm text-destructive mt-1">{form.formState.errors.email.message}</p>
         ) : null}
       </div>
 
-      <div className="relative">
+      <div>
         <Label className="mb-1 block text-xs font-medium text-gray-500" htmlFor="password">
           Password
         </Label>
-        <Input
-          className={`${inputClassName} pr-10`}
-          id="password"
-          type="password"
-          placeholder="********"
-          autoComplete="new-password"
-          {...form.register("password")}
-        />
-        <button
-          className="absolute right-0 top-6 text-gray-400 transition-colors hover:text-gray-600 focus:outline-none"
-          type="button"
-        >
-          <Eye className="h-5 w-5" />
-        </button>
+        <div className="relative">
+          <Input
+            className={`${inputClassName} pr-10`}
+            id="password"
+            type="password"
+            placeholder="********"
+            autoComplete="new-password"
+            {...form.register("password")}
+          />
+          <button
+            className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-gray-600 focus:outline-none"
+            type="button"
+          >
+            <Eye className="h-5 w-5" />
+          </button>
+        </div>
         {form.formState.errors.password ? (
-          <p className="text-sm text-destructive">{form.formState.errors.password.message}</p>
+          <p className="text-sm text-destructive mt-1">{form.formState.errors.password.message}</p>
         ) : null}
       </div>
 
-      <div className="relative">
+      <div>
         <Label className="mb-1 block text-xs font-medium text-gray-500" htmlFor="confirmPassword">
           Konfirmasi Password
         </Label>
@@ -138,13 +141,13 @@ export function RegisterForm() {
           {...form.register("confirmPassword")}
         />
         {form.formState.errors.confirmPassword ? (
-          <p className="text-sm text-destructive">
+          <p className="text-sm text-destructive mt-1">
             {form.formState.errors.confirmPassword.message}
           </p>
         ) : null}
       </div>
 
-      <div className="mt-4 flex items-start">
+      <div className="mt-2 flex items-start">
         <input
           className="mt-0.5 h-4 w-4 rounded border-gray-300 text-[#111111] focus:ring-[#111111]"
           id="terms"
@@ -159,7 +162,7 @@ export function RegisterForm() {
         </label>
       </div>
       {form.formState.errors.terms ? (
-        <p className="text-sm text-destructive">{form.formState.errors.terms.message}</p>
+        <p className="text-sm text-destructive mt-1">{form.formState.errors.terms.message}</p>
       ) : null}
 
       {form.formState.errors.root ? (
@@ -174,7 +177,7 @@ export function RegisterForm() {
         </div>
       ) : null}
 
-      <div className="pt-4">
+      <div className="pt-2">
         <Button
           className="h-auto w-full rounded-full border border-transparent bg-[#111111] px-4 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gray-800 focus-visible:ring-[#111111]"
           disabled={isPending}
@@ -185,7 +188,7 @@ export function RegisterForm() {
       </div>
     </form>
 
-      <div className="mt-6">
+      <div className="mt-4">
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-gray-200" />
@@ -196,7 +199,7 @@ export function RegisterForm() {
         </div>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-4">
         <Button
           className="h-auto w-full rounded-full border border-gray-200 bg-[#f7f3f2] px-4 py-3 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-100 focus-visible:ring-gray-200"
           type="button"
@@ -229,7 +232,7 @@ export function RegisterForm() {
         </Button>
       </div>
 
-      <div className="mt-8 text-center text-xs text-gray-500">
+      <div className="mt-6 text-center text-xs text-gray-500">
         Sudah punya akun?{" "}
         <Link href="/login" className="font-semibold text-[#111111] hover:underline">
           Masuk
