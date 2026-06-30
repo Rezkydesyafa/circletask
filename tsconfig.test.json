@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "outDir": ".tmp/tests",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "types": ["node"]
+  },
+  "include": [
+    "features/contributions/calculate.ts",
+    "features/contributions/calculate.test.ts",
+    "features/contributions/types.ts",
+    "features/tasks/state-machine.ts",
+    "features/tasks/state-machine.test.ts",
+    "types/domain.ts"
+  ]
+}

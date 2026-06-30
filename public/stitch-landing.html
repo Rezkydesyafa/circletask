@@ -1,0 +1,445 @@
+<!DOCTYPE html><html class="light" lang="en"><plasmo-csui id="g0-textarea-recorder"></plasmo-csui><head><style data-styled="" data-styled-version="4.3.1"></style></head><body class="font-body-md text-on-surface min-h-screen m-0 p-0 flex flex-col items-stretch overflow-x-hidden"><plasmo-csui id="g0-textarea-recorder"></plasmo-csui>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CircleTask - Premium Collaboration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#e6e1df",
+                        "on-tertiary-container": "#868381",
+                        "mint-green": "#B8F5D1",
+                        "card-white": "#FFFFFF",
+                        "primary": "#000000",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1c1b1b",
+                        "inverse-surface": "#313030",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#444748",
+                        "lavender": "#D8CCFF",
+                        "tertiary-fixed-dim": "#cac6c3",
+                        "soft-blue": "#C8E7FF",
+                        "bg-mint": "#EEF7F4",
+                        "on-background": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "surface-tint": "#5f5e5e",
+                        "card-cream": "#FAFAF7",
+                        "text-dark": "#1F1F1F",
+                        "surface": "#fdf8f8",
+                        "soft-pink": "#F8C7E8",
+                        "outline-variant": "#c4c7c7",
+                        "on-secondary-fixed": "#002112",
+                        "surface-variant": "#e5e2e1",
+                        "border-soft": "#E7E2D8",
+                        "surface-container-lowest": "#ffffff",
+                        "text-muted": "#777777",
+                        "secondary-container": "#b3f0cc",
+                        "bg-main": "#F7F4EC",
+                        "bg-secondary": "#F3F7FB",
+                        "on-secondary-container": "#366f53",
+                        "coral": "#FFB3A7",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#ebe7e6",
+                        "surface-dim": "#ddd9d8",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-tertiary-fixed": "#1d1b1a",
+                        "inverse-primary": "#c8c6c5",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#858383",
+                        "surface-container-low": "#f7f3f2",
+                        "primary-container": "#1c1b1b",
+                        "pastel-yellow": "#FFE682",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#000000",
+                        "outline": "#747878",
+                        "on-secondary-fixed-variant": "#145136",
+                        "tertiary-container": "#1d1b1a",
+                        "secondary-fixed": "#b3f0cc",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-fixed": "#e5e2e1",
+                        "surface-container": "#f1edec",
+                        "secondary-fixed-dim": "#98d4b1",
+                        "surface-bright": "#fdf8f8",
+                        "secondary": "#30694d",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "background": "#fdf8f8",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f4f0ef",
+                        "surface-container-highest": "#e5e2e1",
+                        "purple-light": "#EAD8FF",
+                        "orange-soft": "#FFD6A5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "4xl": "2rem",
+                        "5xl": "2.5rem"
+                    },
+                    "spacing": {
+                        "sidebar-width": "280px",
+                        "container-padding": "2.5rem",
+                        "stack-gap": "1.5rem",
+                        "grid-gutter": "1rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "button": ["Plus Jakarta Sans"],
+                        "label-caps": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "button": ["15px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #E2E1DD;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(255, 214, 165, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(255, 179, 167, 0.4) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+        
+        .super-container {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .perspective-grid {
+            background-image: 
+                linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            transform: perspective(500px) rotateX(60deg);
+            transform-origin: top;
+            mask-image: linear-gradient(to bottom, transparent, black 10%, black 70%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 70%, transparent);
+        }
+        
+        .hero-card {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hero-card:hover {
+            transform: translateY(-10px) rotate(0deg) !important;
+            z-index: 10;
+        }
+    </style>
+<style data-styled="" data-styled-version="4.3.1"></style>
+<!-- Super Container -->
+<main class="w-full max-w-none bg-bg-main rounded-none super-container relative overflow-hidden flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center pt-8 pointer-events-none">
+<div class="pointer-events-auto bg-white/70 dark:bg-card-white/10 rounded-full mt-6 mx-auto w-fit px-6 py-2 backdrop-blur-xl border border-border-soft no-border shadow-sm flex items-center gap-6">
+<!-- Brand -->
+<div class="flex items-center gap-2 cursor-pointer font-display-lg text-headline-sm text-primary dark:text-on-primary scale-95 active:scale-90 transition-transform">
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-surface-tint flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[18px]">data_usage</span>
+</div>
+</div>
+<!-- Links (Desktop) -->
+<div class="hidden md:flex items-center gap-6">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors duration-300" href="#">Projects</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-on-primary font-bold" href="#">Solutions</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors duration-300" href="#">Pricing</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors duration-300" href="#">Company</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-tertiary-container hover:text-primary transition-colors duration-300" href="#">Support</a>
+</div>
+<!-- Trailing Action -->
+<a href="/login" target="_parent" class="bg-primary text-on-primary font-button text-button px-5 py-2.5 rounded-full scale-95 active:scale-90 transition-transform hover:shadow-md inline-block text-center">
+                    Try for free
+                </a>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative w-full pt-40 pb-20 px-6 flex flex-col items-center text-center z-10">
+<!-- Badge -->
+<div class="inline-flex items-center gap-2 bg-card-white border border-border-soft rounded-full px-4 py-1.5 mb-8 shadow-sm">
+<div class="flex -space-x-2">
+<img class="w-6 h-6 rounded-full border border-white" data-alt="A small circular avatar of a smiling young student in a bright setting, high quality." src="/stitch-assets/avatar-1.png">
+<img class="w-6 h-6 rounded-full border border-white" data-alt="A small circular avatar of a focused young student with glasses, bright setting, high quality." src="/stitch-assets/avatar-2.png">
+<img class="w-6 h-6 rounded-full border border-white" data-alt="A small circular avatar of an energetic student looking at camera, bright setting, high quality." src="/stitch-assets/avatar-3.png">
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Used by active student teams</span>
+</div>
+<!-- Headlines -->
+<h1 class="font-display-lg text-[40px] md:text-display-xl max-w-4xl mb-6 text-text-dark tracking-tight leading-tight">Manage Group Work Fairly with <span class="relative inline-block">CircleTask<svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 20" preserveAspectRatio="none"><path d="M5 15C50 5 250 5 295 15" stroke="#B8F5D1" stroke-width="6" stroke-linecap="round" fill="none"></path></svg></span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">
+                Assign tasks, upload work evidence, review submissions, track real contribution, and export contribution reports automatically.
+            </p>
+<!-- CTA Buttons -->
+<div class="flex flex-col sm:flex-row gap-4 mb-24 relative z-20">
+<a href="/login" target="_parent" class="bg-primary text-on-primary font-button text-button px-8 py-3.5 rounded-full flex items-center justify-center gap-2 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+                    Get Started
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<button class="bg-card-white text-primary border border-border-soft font-button text-button px-8 py-3.5 rounded-full hover:bg-surface-container-low transition-colors shadow-sm">
+                    See Demo
+                </button>
+</div>
+<!-- Overlapping Hero Cards Area -->
+<div class="relative w-full max-w-5xl h-80 mt-10 flex justify-center items-end perspective-container">
+<!-- 3D Grid Background -->
+<div class="absolute bottom-0 left-[-20%] w-[140%] h-[300px] perspective-grid z-0"></div>
+<!-- Card 1: Proof Upload -->
+<div class="hero-card absolute bottom-0 left-4 md:left-[10%] w-[280px] h-[320px] bg-soft-blue rounded-t-[40px] border-2 border-primary shadow-lg p-6 flex flex-col items-center justify-start rotate-[-6deg] origin-bottom-right z-10 transition-transform">
+<div class="w-full flex justify-between mb-4">
+<span class="material-symbols-outlined text-primary">upload_file</span>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<img class="w-32 h-32 object-contain mb-4" data-alt="A soft, playful vector illustration of a cloud and an arrow pointing up, representing file upload, minimal and clean aesthetic." src="/stitch-assets/proof-upload.png">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Proof Upload</h3>
+<div class="w-16 h-1 bg-primary/20 rounded-full mt-auto mb-2"></div>
+</div>
+<!-- Card 3: Contribution Report -->
+<div class="hero-card absolute bottom-0 right-4 md:right-[10%] w-[280px] h-[320px] bg-coral rounded-t-[40px] border-2 border-primary shadow-lg p-6 flex flex-col items-center justify-start rotate-[6deg] origin-bottom-left z-10 transition-transform">
+<div class="w-full flex justify-between mb-4">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<img class="w-32 h-32 object-contain mb-4" data-alt="A soft, playful vector illustration of a glowing sun or star, representing high score and analytics, minimal and clean aesthetic." src="/stitch-assets/report-builder.png">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Contribution</h3>
+<div class="w-16 h-1 bg-primary/20 rounded-full mt-auto mb-2"></div>
+</div>
+<!-- Card 2: Leader Review (Center) -->
+<div class="hero-card absolute bottom-0 w-[300px] h-[360px] bg-soft-pink rounded-t-[48px] border-2 border-primary shadow-[0_20px_40px_rgba(0,0,0,0.1)] p-6 flex flex-col items-center justify-start z-20">
+<div class="w-full flex justify-between mb-4">
+<span class="material-symbols-outlined text-primary">verified</span>
+<div class="flex gap-1">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+</div>
+<img class="w-40 h-40 object-contain mb-4" data-alt="A soft, playful vector illustration of a peace sign hand gesture or a checkmark, representing validation and approval, minimal and clean aesthetic." src="/stitch-assets/analytics.png">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Leader Review</h3>
+<div class="bg-primary text-white font-label-caps text-[10px] px-3 py-1 rounded-full uppercase tracking-wider mt-auto mb-2">Action Required</div>
+</div>
+</div>
+</section>
+<!-- QUICK BENEFIT STRIP -->
+<section class="w-full border-t border-b border-border-soft py-8 relative z-20 overflow-hidden">
+<div class="marquee-track flex items-center gap-4 px-6">
+<!-- Badge 1 -->
+<div class="flex-shrink-0 bg-bg-mint border border-secondary/10 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span class="font-label-caps text-label-caps text-on-secondary-fixed-variant">Tugas Direview: 42</span>
+</div>
+<!-- Badge 2 -->
+<div class="flex-shrink-0 bg-lavender/40 border border-primary/5 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">trending_up</span>
+<span class="font-label-caps text-label-caps text-on-surface">Skor Kontribusi: 95%</span>
+</div>
+<!-- Badge 3 -->
+<div class="flex-shrink-0 bg-soft-pink/40 border border-primary/5 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">description</span>
+<span class="font-label-caps text-label-caps text-on-surface">Laporan Siap</span>
+</div>
+<!-- Badge 4 -->
+<div class="flex-shrink-0 bg-soft-blue/40 border border-primary/5 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">cloud_upload</span>
+<span class="font-label-caps text-label-caps text-on-surface">Bukti Terunggah: 18</span>
+</div>
+<!-- Badge 5 -->
+<div class="flex-shrink-0 bg-pastel-yellow/40 border border-primary/5 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+<span class="font-label-caps text-label-caps text-on-surface">Deadline Terpantau</span>
+</div>
+<!-- Badge 6 -->
+<div class="flex-shrink-0 bg-coral/30 border border-primary/5 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">pie_chart</span>
+<span class="font-label-caps text-label-caps text-on-surface">Progress Tim: 78%</span>
+</div>
+<!-- Duplicated for Marquee -->
+<!-- Badge 1 -->
+<div class="flex-shrink-0 bg-bg-mint border border-secondary/10 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span class="font-label-caps text-label-caps text-on-secondary-fixed-variant">Tugas Direview: 42</span>
+</div>
+<!-- Badge 2 -->
+<div class="flex-shrink-0 bg-lavender/40 border border-primary/5 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">trending_up</span>
+<span class="font-label-caps text-label-caps text-on-surface">Skor Kontribusi: 95%</span>
+</div>
+<!-- Badge 3 -->
+<div class="flex-shrink-0 bg-soft-pink/40 border border-primary/5 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">description</span>
+<span class="font-label-caps text-label-caps text-on-surface">Laporan Siap</span>
+</div>
+<!-- Badge 4 -->
+<div class="flex-shrink-0 bg-soft-blue/40 border border-primary/5 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">cloud_upload</span>
+<span class="font-label-caps text-label-caps text-on-surface">Bukti Terunggah: 18</span>
+</div>
+<!-- Badge 5 -->
+<div class="flex-shrink-0 bg-pastel-yellow/40 border border-primary/5 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+<span class="font-label-caps text-label-caps text-on-surface">Deadline Terpantau</span>
+</div>
+<!-- Badge 6 -->
+<div class="flex-shrink-0 bg-coral/30 border border-primary/5 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">pie_chart</span>
+<span class="font-label-caps text-label-caps text-on-surface">Progress Tim: 78%</span>
+</div>
+</div>
+<style>
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(calc(-50% - 0.5rem)); /* Offset for gap */ }
+        }
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</section>
+<!-- FEATURES GRID -->
+<section class="w-full max-w-6xl mx-auto px-6 py-16 relative z-20">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-[32px] md:text-[40px] text-text-dark mb-4">Everything your team needs to collaborate fairly</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">CircleTask gives student teams a transparent workflow from task assignment to contribution reporting.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-bg-mint p-8 rounded-[32px] shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4">assignment</span>
+<h3 class="font-headline-md text-text-dark mb-2">Task Assignment</h3>
+<p class="font-body-md text-on-surface-variant">Fairly distribute the workload among team members with clear deadlines.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-soft-blue/40 p-8 rounded-[32px] shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">upload_file</span>
+<h3 class="font-headline-md text-text-dark mb-2">Proof-Based Submission</h3>
+<p class="font-body-md text-on-surface-variant">Upload documents and links as evidence of completed work.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-soft-pink/40 p-8 rounded-[32px] shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">verified</span>
+<h3 class="font-headline-md text-text-dark mb-2">Leader Validation</h3>
+<p class="font-body-md text-on-surface-variant">Group leaders can review, approve, or request revisions on submissions.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-pastel-yellow/40 p-8 rounded-[32px] shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">history</span>
+<h3 class="font-headline-md text-text-dark mb-2">Activity Log</h3>
+<p class="font-body-md text-on-surface-variant">Track all changes, submissions, and reviews in a transparent timeline.</p>
+</div>
+<!-- Card 5 -->
+<div class="bg-coral/30 p-8 rounded-[32px] shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">analytics</span>
+<h3 class="font-headline-md text-text-dark mb-2">Contribution Scoring</h3>
+<p class="font-body-md text-on-surface-variant">Automatically calculate individual contributions based on approved tasks.</p>
+</div>
+<!-- Card 6 -->
+<div class="bg-lavender/40 p-8 rounded-[32px] shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">picture_as_pdf</span>
+<h3 class="font-headline-md text-text-dark mb-2">PDF Report Export</h3>
+<p class="font-body-md text-on-surface-variant">Generate professional reports for professors with one click.</p>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS -->
+<section class="w-full max-w-6xl mx-auto px-6 py-20 relative z-20">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-[32px] md:text-[40px] text-text-dark mb-4">How CircleTask works</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+<div class="hidden md:block absolute top-12 left-[10%] right-[10%] h-[2px] bg-border-soft z-0"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center relative z-10">
+<div class="w-24 h-24 rounded-full bg-card-white border border-border-soft shadow-sm flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl text-primary">group_add</span>
+</div>
+<h3 class="font-headline-sm text-text-dark mb-2">1. Create Group</h3>
+<p class="font-body-sm text-on-surface-variant">Set up your team and invite members.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center relative z-10">
+<div class="w-24 h-24 rounded-full bg-card-white border border-border-soft shadow-sm flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl text-primary">assignment_ind</span>
+</div>
+<h3 class="font-headline-sm text-text-dark mb-2">2. Assign Tasks</h3>
+<p class="font-body-sm text-on-surface-variant">Break down the project into fair tasks.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center relative z-10">
+<div class="w-24 h-24 rounded-full bg-card-white border border-border-soft shadow-sm flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl text-primary">cloud_upload</span>
+</div>
+<h3 class="font-headline-sm text-text-dark mb-2">3. Upload Proof</h3>
+<p class="font-body-sm text-on-surface-variant">Submit work evidence for review.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center relative z-10">
+<div class="w-24 h-24 rounded-full bg-card-white border border-border-soft shadow-sm flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl text-primary">summarize</span>
+</div>
+<h3 class="font-headline-sm text-text-dark mb-2">4. Review &amp; Export</h3>
+<p class="font-body-sm text-on-surface-variant">Validate work and export the report.</p>
+</div>
+</div>
+</section>
+<!-- FINAL CTA SECTION -->
+<section class="w-full max-w-4xl mx-auto px-6 py-20 mb-10 relative z-20 text-center">
+<div class="bg-card-cream border border-border-soft rounded-[48px] p-12 shadow-sm">
+<h2 class="font-display-lg text-[32px] md:text-[48px] text-text-dark mb-8 tracking-tight">Start managing team tasks more fairly</h2>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="/login" target="_parent" class="bg-primary text-on-primary font-button text-button px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:shadow-md transition-all">
+                Get Started
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<button class="bg-card-white text-primary border border-border-soft font-button text-button px-8 py-4 rounded-full hover:bg-surface-container-low transition-colors shadow-sm">
+                See Demo
+            </button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full flex flex-col md:flex-row justify-between items-center px-10 py-12 gap-6 bg-card-cream dark:bg-surface-container-low border-t border-border-soft z-10 mt-auto relative">
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm text-primary">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[14px]">data_usage</span>
+</div>
+                CircleTask
+            </div>
+<div class="flex gap-6">
+<a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Product</a>
+<a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Company</a>
+<a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Community</a>
+<a class="font-body-sm text-body-sm text-text-muted hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Legal</a>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface dark:text-on-surface-variant">
+                Â© 2024 CircleTask Premium. All rights reserved.
+            </div>
+</footer>
+</main>
+
+
+</body></html>
