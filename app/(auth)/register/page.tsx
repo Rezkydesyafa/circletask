@@ -9,15 +9,15 @@ export default function RegisterPage() {
       style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
     >
       <section className="flex w-full max-w-[1040px] h-[90vh] max-h-[680px] min-h-[560px] flex-col gap-6 rounded-[40px] bg-[#fdf8f8] p-4 shadow-xl md:flex-row md:p-6 overflow-hidden">
-        <div className="relative hidden w-1/2 overflow-hidden rounded-[32px] bg-[#f0f4f8] md:block h-full">
+        <div className="relative hidden w-1/2 overflow-hidden rounded-[32px] bg-[#eaf4eb] md:block h-full">
           <Image
-            alt="Abstract 3D shapes including spheres, flowers, and donuts in pastel colors"
+            alt="Illustration of uploading task evidence"
             className="h-full w-full object-cover"
             fill
             priority
             sizes="(min-width: 768px) 50vw, 0px"
-            src="/stitch-assets/register-illustration.png"
-            style={{ objectFit: "cover", objectPosition: "left" }}
+            src="/stitch-assets/proof-upload.png"
+            style={{ filter: "hue-rotate(45deg) saturate(1.2)" }}
           />
         </div>
 
