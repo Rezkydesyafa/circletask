@@ -37,26 +37,42 @@ export function LoginForm({ nextPath }: LoginFormProps) {
     form.clearErrors("root");
 
     startTransition(async () => {
-      const result = await loginAction(values);
+      try {
+        const result = await loginAction(values);
 
-      if (result.status === "error") {
+        if (!result) {
+          form.setError("root", {
+            message: "Login gagal. Server tidak mengembalikan response yang valid.",
+          });
+          return;
+        }
+
+        if (result.status === "error") {
+          form.setError("root", {
+            message: result.message ?? "Login gagal.",
+          });
+
+          if (result.fieldErrors?.email?.[0]) {
+            form.setError("email", { message: result.fieldErrors.email[0] });
+          }
+
+          if (result.fieldErrors?.password?.[0]) {
+            form.setError("password", { message: result.fieldErrors.password[0] });
+          }
+
+          return;
+        }
+
+        router.push((result.redirectTo ?? "/dashboard") as Route);
+        router.refresh();
+      } catch (error) {
         form.setError("root", {
-          message: result.message ?? "Login gagal.",
+          message:
+            error instanceof Error
+              ? error.message
+              : "Login gagal. Periksa koneksi Supabase dan coba lagi.",
         });
-
-        if (result.fieldErrors?.email?.[0]) {
-          form.setError("email", { message: result.fieldErrors.email[0] });
-        }
-
-        if (result.fieldErrors?.password?.[0]) {
-          form.setError("password", { message: result.fieldErrors.password[0] });
-        }
-
-        return;
       }
-
-      router.push((result.redirectTo ?? "/dashboard") as Route);
-      router.refresh();
     });
   });
 
