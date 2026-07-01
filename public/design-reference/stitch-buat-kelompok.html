@@ -1,0 +1,767 @@
+<!DOCTYPE html><html lang="en"><plasmo-csui id="g0-textarea-recorder"></plasmo-csui><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CircleTask - Buat Kelompok Baru</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "text-primary": "#171717",
+                      "on-secondary-fixed": "#0c1f1a",
+                      "on-primary-container": "#858383",
+                      "on-tertiary-container": "#868381",
+                      "border-subtle": "#E8E2D8",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "secondary": "#4f635c",
+                      "tertiary-container": "#1d1b1a",
+                      "on-primary-fixed": "#1c1b1b",
+                      "on-primary-fixed-variant": "#474646",
+                      "on-tertiary-fixed-variant": "#484645",
+                      "secondary-container": "#cfe5dc",
+                      "on-tertiary-fixed": "#1d1b1a",
+                      "surface": "#fdf8f8",
+                      "on-error-container": "#93000a",
+                      "surface-card": "#FFFFFF",
+                      "on-tertiary": "#ffffff",
+                      "background": "#fdf8f8",
+                      "on-surface": "#1c1b1b",
+                      "surface-variant": "#e5e2e1",
+                      "tertiary": "#000000",
+                      "surface-container-high": "#ebe7e6",
+                      "surface-container": "#f1edec",
+                      "surface-container-low": "#f7f3f2",
+                      "secondary-fixed-dim": "#b6cbc3",
+                      "pastel-blue": "#D9ECF6",
+                      "pastel-yellow": "#F8E7A8",
+                      "surface-bright": "#fdf8f8",
+                      "page-bg": "#DDECEA",
+                      "surface-dim": "#ddd9d8",
+                      "inverse-on-surface": "#f4f0ef",
+                      "on-secondary-fixed-variant": "#374b44",
+                      "tertiary-fixed-dim": "#cac6c3",
+                      "surface-main": "#FCFAF5",
+                      "inverse-surface": "#313030",
+                      "tertiary-fixed": "#e6e1df",
+                      "primary-container": "#1c1b1b",
+                      "outline-variant": "#c4c7c7",
+                      "shell-bg": "#F7F4EC",
+                      "outline": "#747878",
+                      "pastel-pink": "#F6DCE8",
+                      "primary-fixed": "#e5e2e1",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#536760",
+                      "mint-strong": "#BFE8D7",
+                      "on-surface-variant": "#444748",
+                      "inverse-primary": "#c8c6c5",
+                      "text-secondary": "#6F6F6F",
+                      "secondary-fixed": "#d2e7df",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#5f5e5e",
+                      "pastel-lavender": "#E7E0FA",
+                      "pastel-orange": "#F6DFC8",
+                      "text-soft": "#9A9A9A",
+                      "on-primary": "#ffffff",
+                      "on-background": "#1c1b1b",
+                      "primary": "#000000",
+                      "surface-container-highest": "#e5e2e1",
+                      "primary-fixed-dim": "#c8c6c5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "page-padding": "32px",
+                      "shell-padding": "20px",
+                      "card-gap": "16px",
+                      "sidebar-width": "84px",
+                      "section-gap": "24px"
+              },
+              "fontFamily": {
+                      "body": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "button": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "heading-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "heading-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "heading-sm": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "body": [
+                              "15px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "button": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display": [
+                              "42px",
+                              {
+                                      "lineHeight": "1.15",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "heading-lg": [
+                              "30px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "heading-md": [
+                              "22px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "heading-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.35",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #DDECEA; /* page-bg */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        
+        .shadow-soft {
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
+        }
+        
+        .shadow-inner-soft {
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        /* Custom Scrollbar for inner areas if needed */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E8E2D8;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c4c7c7;
+        }
+    </style>
+<style data-styled="" data-styled-version="4.3.1"></style></head>
+<body class="font-body text-text-primary antialiased"><plasmo-csui id="g0-textarea-recorder"></plasmo-csui>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CircleTask - Buat Kelompok Baru</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "text-primary": "#171717",
+                      "on-secondary-fixed": "#0c1f1a",
+                      "on-primary-container": "#858383",
+                      "on-tertiary-container": "#868381",
+                      "border-subtle": "#E8E2D8",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "secondary": "#4f635c",
+                      "tertiary-container": "#1d1b1a",
+                      "on-primary-fixed": "#1c1b1b",
+                      "on-primary-fixed-variant": "#474646",
+                      "on-tertiary-fixed-variant": "#484645",
+                      "secondary-container": "#cfe5dc",
+                      "on-tertiary-fixed": "#1d1b1a",
+                      "surface": "#fdf8f8",
+                      "on-error-container": "#93000a",
+                      "surface-card": "#FFFFFF",
+                      "on-tertiary": "#ffffff",
+                      "background": "#fdf8f8",
+                      "on-surface": "#1c1b1b",
+                      "surface-variant": "#e5e2e1",
+                      "tertiary": "#000000",
+                      "surface-container-high": "#ebe7e6",
+                      "surface-container": "#f1edec",
+                      "surface-container-low": "#f7f3f2",
+                      "secondary-fixed-dim": "#b6cbc3",
+                      "pastel-blue": "#D9ECF6",
+                      "pastel-yellow": "#F8E7A8",
+                      "surface-bright": "#fdf8f8",
+                      "page-bg": "#DDECEA",
+                      "surface-dim": "#ddd9d8",
+                      "inverse-on-surface": "#f4f0ef",
+                      "on-secondary-fixed-variant": "#374b44",
+                      "tertiary-fixed-dim": "#cac6c3",
+                      "surface-main": "#FCFAF5",
+                      "inverse-surface": "#313030",
+                      "tertiary-fixed": "#e6e1df",
+                      "primary-container": "#1c1b1b",
+                      "outline-variant": "#c4c7c7",
+                      "shell-bg": "#F7F4EC",
+                      "outline": "#747878",
+                      "pastel-pink": "#F6DCE8",
+                      "primary-fixed": "#e5e2e1",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#536760",
+                      "mint-strong": "#BFE8D7",
+                      "on-surface-variant": "#444748",
+                      "inverse-primary": "#c8c6c5",
+                      "text-secondary": "#6F6F6F",
+                      "secondary-fixed": "#d2e7df",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#5f5e5e",
+                      "pastel-lavender": "#E7E0FA",
+                      "pastel-orange": "#F6DFC8",
+                      "text-soft": "#9A9A9A",
+                      "on-primary": "#ffffff",
+                      "on-background": "#1c1b1b",
+                      "primary": "#000000",
+                      "surface-container-highest": "#e5e2e1",
+                      "primary-fixed-dim": "#c8c6c5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "page-padding": "32px",
+                      "shell-padding": "20px",
+                      "card-gap": "16px",
+                      "sidebar-width": "84px",
+                      "section-gap": "24px"
+              },
+              "fontFamily": {
+                      "body": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "button": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "heading-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "heading-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "heading-sm": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "body": [
+                              "15px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "button": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display": [
+                              "42px",
+                              {
+                                      "lineHeight": "1.15",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "heading-lg": [
+                              "30px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "heading-md": [
+                              "22px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "heading-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.35",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #DDECEA; /* page-bg */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        
+        .shadow-soft {
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
+        }
+        
+        .shadow-inner-soft {
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        /* Custom Scrollbar for inner areas if needed */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E8E2D8;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c4c7c7;
+        }
+    </style>
+<style data-styled="" data-styled-version="4.3.1"></style>
+
+<!-- Master Shell Container -->
+<div class="w-full max-w-[1440px] h-[921px] bg-shell-bg rounded-[32px] shadow-soft flex overflow-hidden relative">
+<!-- SideNavBar (Shared Component) -->
+<!-- Logic: Active tab is "Groups" since we are creating a group -->
+<nav class="w-[84px] h-full rounded-l-[32px] bg-shell-bg dark:bg-tertiary-container flex flex-col items-center py-shell-padding space-y-6 border-r border-border-subtle z-10 shrink-0">
+<!-- Brand Avatar/Logo -->
+<div class="mb-4 group cursor-pointer flex flex-col items-center gap-2">
+<div class="w-12 h-12 bg-surface-main rounded-xl flex items-center justify-center border border-border-subtle shadow-sm group-hover:bg-mint-strong transition-colors">
+<span class="material-symbols-outlined font-display text-heading-sm text-primary dark:text-primary-fixed" data-icon="workspaces" style="font-variation-settings: 'FILL' 1;">workspaces</span>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex flex-col gap-4 w-full items-center">
+<!-- Dashboard (Inactive) -->
+<a aria-label="Dashboard" class="text-on-primary-container dark:text-on-primary-container w-12 h-12 flex items-center justify-center hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full transition-colors scale-95 active:scale-90" href="#" title="Dashboard">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</a>
+<!-- Groups (Active) -->
+<a aria-label="Groups" class="bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed rounded-full w-12 h-12 flex items-center justify-center scale-95 active:scale-90 transition-transform shadow-md" href="#" title="Groups">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+</a>
+<!-- Tasks (Inactive) -->
+<a aria-label="Tasks" class="text-on-primary-container dark:text-on-primary-container w-12 h-12 flex items-center justify-center hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full transition-colors scale-95 active:scale-90" href="#" title="Tasks">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+</a>
+<!-- Contribution (Inactive) -->
+<a aria-label="Contribution" class="text-on-primary-container dark:text-on-primary-container w-12 h-12 flex items-center justify-center hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full transition-colors scale-95 active:scale-90" href="#" title="Contribution">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+</a>
+<!-- Activity (Inactive) -->
+<a aria-label="Activity" class="text-on-primary-container dark:text-on-primary-container w-12 h-12 flex items-center justify-center hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full transition-colors scale-95 active:scale-90" href="#" title="Activity">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</a>
+<!-- Reports (Inactive) -->
+<a aria-label="Reports" class="text-on-primary-container dark:text-on-primary-container w-12 h-12 flex items-center justify-center hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full transition-colors scale-95 active:scale-90" href="#" title="Reports">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+</a>
+</div>
+<!-- Spacer -->
+<div class="flex-grow"></div>
+<!-- Settings (Inactive) -->
+<a aria-label="Settings" class="text-on-primary-container dark:text-on-primary-container w-12 h-12 flex items-center justify-center hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full transition-colors scale-95 active:scale-90 mt-auto" href="#" title="Settings">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+</nav>
+<!-- Main Content Canvas -->
+<div class="flex-1 flex flex-col h-full bg-surface-main rounded-r-[32px] overflow-hidden relative shadow-inner-soft">
+<!-- TopNavBar (Shared Component) -->
+<header class="w-full h-16 bg-shell-bg dark:bg-tertiary-container flex justify-between items-center px-page-padding border-b border-border-subtle z-10 shrink-0">
+<!-- Search (Left as per JSON) -->
+<div class="relative w-64 group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-soft text-[20px]" data-icon="search">search</span>
+</div>
+<input class="w-full h-10 bg-surface-card border border-border-subtle rounded-xl pl-10 pr-4 font-body text-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm group-hover:border-outline-variant" placeholder="Search..." type="text">
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-primary-container hover:bg-surface-container-high hover:opacity-80 transition-all focus:outline-none focus:ring-2 focus:ring-primary relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<!-- Notification badge -->
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border border-surface-card"></span>
+</button>
+<div class="w-px h-6 bg-border-subtle"></div>
+<button class="flex items-center gap-3 hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary rounded-full p-1 pr-3 border border-transparent hover:border-border-subtle hover:bg-surface-container-low">
+<img alt="User Profile" class="w-8 h-8 rounded-full object-cover shadow-sm bg-surface-dim" data-alt="A portrait photograph of a young professional student or designer, brightly lit with soft, warm light against a clean white background, creating a modern, friendly light-mode aesthetic, highly detailed, realistic, 8k resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC90GKz_yzlMLcgD7i2GNaH_sfJ4yLRtVYwR4pad4DPi8MyeuCPcdr7Ooq_vf4QIo-iQm9y5ukWxc7BbHHzHyM8dZV3ScesbtFOtYONZIssJm6n8laKQ69tKTb1yvvs6FGWQJNYwi3gdKyl7dMOdoipPqjHZFnpT4RHS4IqqqPmMiro5Xnbw6u-XsVr9T6f8s_XrfI4FMUOXoVSroH2iYlvXETpY6h6k5VKPniBkOomcps9of3VIB3eQjLhmaemSBALxkf0mS7tuSjZ">
+<span class="font-button text-button text-text-primary">Admin</span>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 overflow-y-auto p-page-padding bg-surface-main">
+<!-- Page Header -->
+<div class="mb-8">
+<h1 class="font-heading-lg text-heading-lg text-text-primary mb-2">Buat Kelompok Baru</h1>
+<p class="font-body text-body text-text-secondary max-w-2xl">Buat ruang kerja kelompok, undang anggota, lalu mulai bagi task.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-section-gap">
+<!-- Left Column: Main Form Area (Spans 8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Form Card -->
+<div class="bg-surface-card rounded-[24px] p-8 border border-border-subtle shadow-sm flex flex-col gap-6">
+<!-- Nama Kelompok -->
+<div class="flex flex-col gap-2">
+<label class="font-label text-label text-text-primary" for="group-name">Nama Kelompok</label>
+<input class="w-full h-12 bg-surface-main border border-border-subtle rounded-[18px] px-4 font-body text-body text-text-primary placeholder:text-text-soft focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-inner-soft" id="group-name" placeholder="Contoh: Kelompok AI Praktikum" type="text">
+</div>
+<!-- Deskripsi -->
+<div class="flex flex-col gap-2">
+<label class="font-label text-label text-text-primary" for="group-desc">Deskripsi</label>
+<textarea class="w-full bg-surface-main border border-border-subtle rounded-[18px] p-4 font-body text-body text-text-primary placeholder:text-text-soft focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-inner-soft resize-none" id="group-desc" placeholder="Tuliskan tujuan..." rows="3"></textarea>
+</div>
+<!-- Mata Kuliah & Deadline Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Mata Kuliah -->
+<div class="flex flex-col gap-2">
+<label class="font-label text-label text-text-primary" for="course-name">Mata Kuliah</label>
+<input class="w-full h-12 bg-surface-main border border-border-subtle rounded-[18px] px-4 font-body text-body text-text-primary placeholder:text-text-soft focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-inner-soft" id="course-name" placeholder="Contoh: Artificial Intelligence" type="text">
+</div>
+<!-- Deadline Umum -->
+<div class="flex flex-col gap-2">
+<label class="font-label text-label text-text-primary" for="deadline-date">Deadline Umum</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-text-soft text-[20px]" data-icon="calendar_today">calendar_today</span>
+</div>
+<input class="w-full h-12 bg-surface-main border border-border-subtle rounded-[18px] pl-11 pr-4 font-body text-body text-text-primary text-text-soft focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-inner-soft appearance-none" id="deadline-date" type="date">
+</div>
+</div>
+</div>
+<!-- Warna Kelompok -->
+<div class="flex flex-col gap-3 mt-2">
+<label class="font-label text-label text-text-primary">Warna Kelompok</label>
+<div class="flex gap-4">
+<!-- Mint (Selected) -->
+<label class="relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="color-theme" type="radio" value="mint">
+<div class="w-10 h-10 rounded-full bg-mint-strong border-2 border-transparent peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-mint-strong transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm opacity-0 peer-checked:opacity-100 transition-opacity font-bold" data-icon="check">check</span>
+</div>
+</label>
+<!-- Pink -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="color-theme" type="radio" value="pink">
+<div class="w-10 h-10 rounded-full bg-pastel-pink border-2 border-transparent peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-pastel-pink transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm opacity-0 peer-checked:opacity-100 transition-opacity font-bold" data-icon="check">check</span>
+</div>
+</label>
+<!-- Lavender -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="color-theme" type="radio" value="lavender">
+<div class="w-10 h-10 rounded-full bg-pastel-lavender border-2 border-transparent peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-pastel-lavender transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm opacity-0 peer-checked:opacity-100 transition-opacity font-bold" data-icon="check">check</span>
+</div>
+</label>
+<!-- Yellow -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="color-theme" type="radio" value="yellow">
+<div class="w-10 h-10 rounded-full bg-pastel-yellow border-2 border-transparent peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-pastel-yellow transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm opacity-0 peer-checked:opacity-100 transition-opacity font-bold" data-icon="check">check</span>
+</div>
+</label>
+<!-- Blue -->
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="color-theme" type="radio" value="blue">
+<div class="w-10 h-10 rounded-full bg-pastel-blue border-2 border-transparent peer-checked:border-primary peer-checked:ring-2 peer-checked:ring-offset-2 peer-checked:ring-pastel-blue transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm opacity-0 peer-checked:opacity-100 transition-opacity font-bold" data-icon="check">check</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Role Info Card & CTA Row -->
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<!-- Role Info -->
+<div class="flex-1 bg-surface-container-low rounded-[20px] p-5 border border-border-subtle flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary text-[20px]" data-icon="shield_person">shield_person</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-label text-[10px] uppercase tracking-wider bg-tertiary text-on-tertiary px-2 py-1 rounded-full">Ketua</span>
+<h3 class="font-heading-sm text-body text-text-primary">Kamu akan menjadi Ketua Kelompok</h3>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                                        Sebagai ketua, kamu bisa membuat project, membagi task, review bukti pekerjaan, reassign task, melihat kontribusi, dan export laporan.
+                                    </p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-3 shrink-0 md:w-48 mt-4 md:mt-0 self-end">
+<button class="w-full h-12 bg-primary text-on-primary font-button text-button rounded-full hover:bg-inverse-surface active:scale-95 transition-all shadow-md flex justify-center items-center gap-2" onclick="showSuccessModal()" type="button">
+                                    Buat Kelompok
+                                </button>
+<button class="w-full h-12 bg-surface-card text-text-primary border border-border-subtle font-button text-button rounded-full hover:bg-surface-container-low active:scale-95 transition-all" type="button">
+                                    Batal
+                                </button>
+</div>
+</div>
+</div>
+<!-- Right Column: Preview & Join Code (Spans 4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Header Preview Card -->
+<div class="bg-surface-card rounded-[24px] p-6 border border-border-subtle shadow-sm flex flex-col gap-5 sticky top-0">
+<h3 class="font-label text-label text-text-secondary uppercase tracking-wider mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="visibility">visibility</span>
+                                Preview Tampilan
+                            </h3>
+<!-- The Preview Card -->
+<div class="bg-mint-strong rounded-[20px] p-5 shadow-sm transition-colors duration-300 relative overflow-hidden" id="preview-card-container">
+<!-- Abstract decorative shape -->
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-white/20 rounded-full blur-xl"></div>
+<div class="flex justify-between items-start mb-6 relative z-10">
+<div class="bg-primary/10 text-primary px-3 py-1 rounded-full font-label text-[10px] uppercase tracking-wider font-bold backdrop-blur-sm border border-primary/20">
+                                        Artificial Intelligence
+                                    </div>
+<span class="font-label text-[10px] bg-tertiary text-on-tertiary px-2 py-1 rounded-full shadow-sm">Ketua</span>
+</div>
+<h4 class="font-heading-md text-heading-md text-primary mb-1 relative z-10 leading-tight" id="preview-title">Kelompok AI Praktikum</h4>
+<p class="font-body-sm text-body-sm text-secondary/80 mb-6 relative z-10 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span>
+<span id="preview-date">TBD</span>
+</p>
+<div class="flex justify-between items-center relative z-10 p-3 bg-white/40 backdrop-blur-md rounded-xl border border-white/50">
+<div class="flex flex-col">
+<span class="font-label text-[10px] text-secondary uppercase tracking-wider mb-1">Anggota</span>
+<span class="font-heading-sm text-primary">1</span>
+</div>
+<div class="w-px h-8 bg-primary/20"></div>
+<div class="flex flex-col">
+<span class="font-label text-[10px] text-secondary uppercase tracking-wider mb-1">Projects</span>
+<span class="font-heading-sm text-primary">0</span>
+</div>
+<div class="w-px h-8 bg-primary/20"></div>
+<div class="flex flex-col">
+<span class="font-label text-[10px] text-secondary uppercase tracking-wider mb-1">Progress</span>
+<span class="font-heading-sm text-primary">0%</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4 border border-border-subtle border-dashed flex items-center justify-center text-center">
+<p class="font-body-sm text-text-soft text-body-sm italic flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="inbox">inbox</span>
+                                    Belum ada project...
+                                </p>
+</div>
+</div>
+<!-- Join Code Box -->
+<div class="bg-surface-card rounded-[24px] p-6 border border-border-subtle shadow-sm">
+<h3 class="font-heading-sm text-heading-sm text-text-primary mb-1">Kode Join</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-4">Kode Join akan dibuat otomatis setelah kelompok disimpan.</p>
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-surface-container-low border border-border-subtle border-dashed rounded-xl h-12 flex items-center justify-center">
+<span class="font-display text-[18px] text-text-soft opacity-50 tracking-widest blur-[2px]">CT-AI24</span>
+</div>
+<button class="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-text-soft cursor-not-allowed border border-border-subtle" disabled="">
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<!-- Success Modal Overlay Mockup (Hidden by default) -->
+<div class="fixed inset-0 bg-primary/40 backdrop-blur-sm z-50 hidden items-center justify-center opacity-0 transition-opacity duration-300" id="success-modal">
+<div class="bg-surface-card w-full max-w-md rounded-[32px] p-8 shadow-2xl flex flex-col items-center text-center transform scale-95 transition-transform duration-300" id="success-modal-content">
+<div class="w-20 h-20 bg-mint-strong rounded-full flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[40px]" data-icon="celebration">celebration</span>
+</div>
+<h2 class="font-heading-md text-heading-md text-text-primary mb-2">Kelompok Berhasil Dibuat!</h2>
+<p class="font-body text-body text-text-secondary mb-8 px-4">Bagikan kode ini kepada teman-temanmu agar mereka bisa bergabung.</p>
+<!-- Code Display -->
+<div class="w-full bg-surface-main border border-border-subtle rounded-[20px] p-6 mb-8 relative">
+<span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-surface-card px-3 font-label text-[10px] uppercase tracking-widest text-text-secondary rounded-full border border-border-subtle">Kode Join</span>
+<div class="font-display text-[32px] text-primary tracking-widest font-bold">CT-AI24</div>
+</div>
+<!-- Actions -->
+<div class="w-full flex flex-col gap-3">
+<button class="w-full h-12 bg-surface-container-low text-text-primary border border-border-subtle font-button text-button rounded-full hover:bg-surface-container-high active:scale-95 transition-all flex justify-center items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="content_copy">content_copy</span>
+                    Copy Code
+                </button>
+<button class="w-full h-12 bg-primary text-on-primary font-button text-button rounded-full hover:bg-inverse-surface active:scale-95 transition-all shadow-md" onclick="hideSuccessModal()" type="button">
+                    Masuk ke Dashboard Kelompok
+                </button>
+</div>
+</div>
+</div>
+<!-- Simple interaction script -->
+<script>
+        // Live Preview Logic
+        const titleInput = document.getElementById('group-name');
+        const previewTitle = document.getElementById('preview-title');
+        
+        titleInput.addEventListener('input', (e) => {
+            previewTitle.textContent = e.target.value || 'Kelompok AI Praktikum';
+        });
+
+        const dateInput = document.getElementById('deadline-date');
+        const previewDate = document.getElementById('preview-date');
+        
+        dateInput.addEventListener('change', (e) => {
+            if(e.target.value) {
+                const date = new Date(e.target.value);
+                previewDate.textContent = date.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+            } else {
+                previewDate.textContent = 'TBD';
+            }
+        });
+
+        // Color Theme Logic for Preview Card
+        const colorRadios = document.querySelectorAll('input[name="color-theme"]');
+        const previewContainer = document.getElementById('preview-card-container');
+        
+        const colorMap = {
+            'mint': 'bg-mint-strong',
+            'pink': 'bg-pastel-pink',
+            'lavender': 'bg-pastel-lavender',
+            'yellow': 'bg-pastel-yellow',
+            'blue': 'bg-pastel-blue'
+        };
+
+        colorRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                // Remove all color classes
+                Object.values(colorMap).forEach(cls => previewContainer.classList.remove(cls));
+                // Add new color class
+                previewContainer.classList.add(colorMap[e.target.value]);
+            });
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('success-modal');
+        const modalContent = document.getElementById('success-modal-content');
+
+        function showSuccessModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Trigger reflow
+            void modal.offsetWidth;
+            
+            // Animate in
+            modal.classList.remove('opacity-0');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }
+
+        function hideSuccessModal() {
+            // Animate out
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+    </script>
+</body></html>

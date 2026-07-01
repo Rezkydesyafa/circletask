@@ -310,6 +310,8 @@ Aturan file:
 - Link eksternal boleh untuk Google Drive, GitHub, Figma, dan draw.io.
 - File hanya dapat diupload dan dibaca oleh anggota kelompok terkait.
 - User luar kelompok tidak boleh melihat file atau metadata bukti.
+- File dapat dihapus oleh assigned member task terkait atau ketua kelompok untuk mendukung delete/replace evidence.
+- Jika upload file Storage berhasil tetapi insert/update metadata gagal, server action harus mencoba cleanup object Storage.
 
 ## Validasi Utama
 
@@ -345,15 +347,45 @@ Activity log:
 
 Backend/logic yang tersedia:
 
-- Auth: register, login, logout, request reset password, update profile minimal.
+- Auth: register, login, logout, request reset password, update password setelah recovery session, update profile minimal.
 - Groups: create group atomik via RPC, join group via join code, update group, remove member leader-only.
 - Projects: create project dan update project leader-only.
-- Tasks: create task, update task leader-only, mark assigned task `in_progress`, create comment, grouped task board query.
-- Evidences: create signed upload target, save file metadata, add external evidence link, private signed URL query.
+- Tasks: create task, update task leader-only, mark assigned task `in_progress`, mark task `done` leader-only dari status `approved`, create comment, grouped task board query.
+- Task workflow: helper state machine formal untuk transisi status MVP dan unit test agar member tidak bisa set `done`.
+- Evidences: create signed upload target, save file metadata, add external evidence link, delete evidence, replace file evidence metadata, cleanup Storage saat metadata gagal, private signed URL query.
 - Reviews: submit review, approve, revision, reassign, pending review query, review history, reassign history.
 - Activity: reusable activity log helper dan activity timeline query.
 - Contributions: scoring dari task `approved`/`done` dengan penalti deadline dan revisi.
 - Reports: preview data aggregation, React PDF `ContributionReportPDF`, export action base64 PDF, dan activity log untuk export laporan.
+
+## Backend Verification
+
+Script verifikasi:
+
+- `pnpm typecheck` untuk validasi TypeScript aplikasi.
+- `pnpm lint` untuk lint Next.js.
+- `pnpm build` untuk production build.
+- `pnpm test:unit` untuk unit test contribution scoring dan task status state machine.
+- `pnpm test:supabase` untuk smoke test integrasi Supabase.
+
+Smoke test Supabase mencakup:
+
+- Auth user bootstrap dan update password via Supabase Auth session.
+- RPC `create_group_with_leader`.
+- RPC `join_group_by_code`.
+- RLS multi-user untuk outsider tidak bisa membaca group.
+- Permission task: member tidak bisa set `done`, member tidak bisa edit metadata task.
+- Evidence insert link, upload file ke bucket private, dan delete object Storage oleh assigned member.
+- Storage policy: outsider tidak bisa download evidence file.
+- Review flow: submit review, leader revision, resubmit, leader approve.
+- Permission review/reassign: member tidak bisa membuat review atau reassign row.
+- Reassign flow leader-only.
+
+Catatan:
+
+- `pnpm test:supabase` otomatis skip jika env Supabase test belum lengkap.
+- `SUPABASE_SERVICE_ROLE_KEY` hanya dipakai oleh smoke test/server-side tooling, tidak boleh masuk client.
+- Supabase CLI dibutuhkan untuk `pnpm supabase:migrate`, `pnpm supabase:migrate:local`, dan `pnpm supabase:types`.
 
 ## Aturan Teknis
 

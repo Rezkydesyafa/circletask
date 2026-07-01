@@ -1,0 +1,409 @@
+<!DOCTYPE html><html lang="id"><plasmo-csui id="g0-textarea-recorder"></plasmo-csui><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Anggota Kelompok - CircleTask</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "text-soft": "#9A9A9A",
+                        "on-tertiary-fixed": "#1d1b1a",
+                        "background": "#fdf8f8",
+                        "on-secondary-fixed": "#0c1f1a",
+                        "on-tertiary-container": "#868381",
+                        "surface-main": "#FCFAF5",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-container": "#cfe5dc",
+                        "on-surface-variant": "#444748",
+                        "surface-dim": "#ddd9d8",
+                        "primary-fixed": "#e5e2e1",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline": "#747878",
+                        "outline-variant": "#c4c7c7",
+                        "page-bg": "#DDECEA",
+                        "secondary-fixed-dim": "#b6cbc3",
+                        "inverse-primary": "#c8c6c5",
+                        "text-secondary": "#6F6F6F",
+                        "pastel-yellow": "#F8E7A8",
+                        "pastel-lavender": "#E7E0FA",
+                        "on-secondary-fixed-variant": "#374b44",
+                        "surface-container-high": "#ebe7e6",
+                        "secondary-fixed": "#d2e7df",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#4f635c",
+                        "border-subtle": "#E8E2D8",
+                        "inverse-on-surface": "#f4f0ef",
+                        "primary": "#000000",
+                        "surface-container-low": "#f7f3f2",
+                        "shell-bg": "#F7F4EC",
+                        "on-secondary-container": "#536760",
+                        "surface-card": "#FFFFFF",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "tertiary": "#000000",
+                        "surface-variant": "#e5e2e1",
+                        "on-surface": "#1c1b1b",
+                        "pastel-orange": "#F6DFC8",
+                        "text-primary": "#171717",
+                        "tertiary-container": "#1d1b1a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#cac6c3",
+                        "surface": "#fdf8f8",
+                        "pastel-pink": "#F6DCE8",
+                        "tertiary-fixed": "#e6e1df",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#858383",
+                        "on-background": "#1c1b1b",
+                        "mint-strong": "#BFE8D7",
+                        "pastel-blue": "#D9ECF6",
+                        "surface-tint": "#5f5e5e",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fdf8f8",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "surface-container": "#f1edec",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "primary-container": "#1c1b1b",
+                        "inverse-surface": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sidebar-width": "84px",
+                        "page-padding": "32px",
+                        "section-gap": "24px",
+                        "card-gap": "16px",
+                        "shell-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"],
+                        "heading-sm": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "heading-lg": ["Plus Jakarta Sans"],
+                        "button": ["Plus Jakarta Sans"],
+                        "heading-md": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "heading-sm": ["18px", { "lineHeight": "1.35", "fontWeight": "600" }],
+                        "display": ["42px", { "lineHeight": "1.15", "fontWeight": "700" }],
+                        "heading-lg": ["30px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "button": ["14px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "heading-md": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #DDECEA; }
+        .soft-shadow { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); }
+    </style>
+<style data-styled="" data-styled-version="4.3.1"></style></head>
+<body class="font-body text-body bg-page-bg min-h-screen p-4 md:p-8">
+<div class="bg-shell-bg rounded-[32px] w-full max-w-[1440px] mx-auto min-h-[calc(100vh-64px)] overflow-hidden flex relative soft-shadow border border-border-subtle">
+<!-- SideNavBar -->
+<nav class="bg-transparent fixed left-0 top-0 h-full w-[84px] md:flex flex-col items-center py-page-padding hidden z-10">
+<div class="mb-12 font-display text-heading-md text-primary font-bold">CT</div>
+<div class="flex flex-col gap-4 flex-1">
+<a class="flex items-center justify-center text-text-soft hover:bg-surface-container-high hover:text-primary w-12 h-12 rounded-full transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined transition-colors group-hover:text-primary">dashboard</span>
+</a>
+<a class="flex items-center justify-center bg-primary text-on-primary rounded-full w-12 h-12 mb-4 transition-all duration-200 active:scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+</a>
+<a class="flex items-center justify-center text-text-soft hover:bg-surface-container-high hover:text-primary w-12 h-12 rounded-full transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined transition-colors group-hover:text-primary">task_alt</span>
+</a>
+<a class="flex items-center justify-center text-text-soft hover:bg-surface-container-high hover:text-primary w-12 h-12 rounded-full transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined transition-colors group-hover:text-primary">handshake</span>
+</a>
+<a class="flex items-center justify-center text-text-soft hover:bg-surface-container-high hover:text-primary w-12 h-12 rounded-full transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined transition-colors group-hover:text-primary">analytics</span>
+</a>
+<a class="flex items-center justify-center text-text-soft hover:bg-surface-container-high hover:text-primary w-12 h-12 rounded-full transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined transition-colors group-hover:text-primary">bar_chart</span>
+</a>
+<a class="flex items-center justify-center text-text-soft hover:bg-surface-container-high hover:text-primary w-12 h-12 rounded-full transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined transition-colors group-hover:text-primary">settings</span>
+</a>
+</div>
+<div class="mt-auto pt-4 border-t border-border-subtle w-12">
+<a class="flex items-center justify-center text-text-soft hover:bg-surface-container-high hover:text-primary w-12 h-12 rounded-full transition-all duration-200 active:scale-95 group" href="#">
+<span class="material-symbols-outlined transition-colors group-hover:text-primary">account_circle</span>
+</a>
+</div>
+</nav>
+<!-- Main Workspace -->
+<main class="flex-1 md:ml-[84px] bg-surface-main min-h-full rounded-[32px] overflow-hidden flex flex-col relative z-0">
+<!-- TopNavBar -->
+<header class="bg-transparent flex justify-between items-center w-full px-page-padding py-4 sticky top-0 z-20 backdrop-blur-sm">
+<div>
+<h1 class="font-display text-heading-md font-extrabold text-primary tracking-tight">Anggota Kelompok</h1>
+<p class="font-body text-body text-text-secondary mt-1">Lihat anggota, role, status aktivitas, dan kontribusi ringkas.</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-soft">search</span>
+<input class="bg-surface-card border border-border-subtle rounded-[18px] py-3 pl-12 pr-4 text-body font-body text-primary focus:outline-none focus:ring-2 focus:ring-primary/20 w-64 transition-all" placeholder="Cari anggota..." type="text">
+</div>
+<button class="text-text-secondary hover:text-primary transition-colors cursor-pointer active:scale-95 p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full overflow-hidden border border-border-subtle cursor-pointer active:scale-95 transition-transform">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close up portrait of a young professional student with a warm smile, wearing casual modern attire. The lighting is soft and natural, contributing to a clean, light-mode educational platform aesthetic. Minimalist pastel background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzbuQK6PdqzHZlc1dtHC_zRPUReAmcr8lC9Bc74ZAY7qInzlXJ122rr2MIrAAAPW8Zh8YE4asmXc_vqKa1x6mkBtQDM6H6Kti-fVwcaXfp6bVF2Z19JuLx-wVSz5F16yxV8AvA1GmK0Mj5wNSksmUsa81TVY_-meZsWVpohQmE757q6TOOZZMk5EjU88v_R4qRdjjeL9iwGQNfHkkVtkXdoC6WWI2_0YZKr6566EDrmN94RngJASzvqxpIYSgsPKTKX5ZozCG5YVfK">
+</button>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 p-page-padding pt-4 overflow-y-auto flex flex-col lg:flex-row gap-section-gap">
+<!-- Left Column (Grid) -->
+<div class="flex-1 flex flex-col gap-6">
+<!-- Filters -->
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary text-on-primary font-button text-button px-5 py-2.5 rounded-full transition-transform active:scale-95">Semua</button>
+<button class="bg-surface-card border border-border-subtle text-text-secondary font-button text-button px-5 py-2.5 rounded-full hover:bg-surface-container-high hover:text-primary transition-all active:scale-95">Ketua</button>
+<button class="bg-surface-card border border-border-subtle text-text-secondary font-button text-button px-5 py-2.5 rounded-full hover:bg-surface-container-high hover:text-primary transition-all active:scale-95">Anggota</button>
+<button class="bg-surface-card border border-border-subtle text-text-secondary font-button text-button px-5 py-2.5 rounded-full hover:bg-surface-container-high hover:text-primary transition-all active:scale-95">Aktif</button>
+<button class="bg-surface-card border border-border-subtle text-text-secondary font-button text-button px-5 py-2.5 rounded-full hover:bg-surface-container-high hover:text-primary transition-all active:scale-95">Kurang Aktif</button>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-card-gap">
+<!-- Card 1: Fajar (Ketua) -->
+<div class="bg-surface-card rounded-[24px] p-6 soft-shadow border border-border-subtle hover:border-mint-strong transition-colors group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-pastel-yellow opacity-20 rounded-bl-[100px] -z-0"></div>
+<div class="flex justify-between items-start relative z-10 mb-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-surface-main">
+<img alt="Fajar Atmin" class="w-full h-full object-cover" data-alt="A close up portrait of an energetic male student in his early twenties, smiling confidently. Soft, diffused lighting highlights his features against a clean, light-mode background with a subtle pastel hint, fitting a modern productivity app style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0ksr0lJhCrrb1mdTWTKHRiAHFp-w22XymuljjYx5BkoqXt0lAobv9db068-Vxuq4nshc6n2tlty2qLHwBX4JeN7wokVb7EtgAj6h75BmJs0ViZknHZQTdNgeFb9hWArELZ3nnDQkgD5aJv2fD-0IkSfSo5jA15G8k0Edohy9j6KbUNhabzAAQjVFdzG8P7Vf2CrV9v2KiRDpvdIpub3TdCNnm0undEZJ5ViLRCenYkQNPHawOHHTnmmc94aTWa3je3irAy_KDeW7I">
+</div>
+<div>
+<h3 class="font-heading-sm text-heading-sm text-primary mb-1">Fajar Atmin</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">fajar.atmin@univ.edu</p>
+</div>
+</div>
+<span class="bg-primary text-on-primary font-label text-label px-3 py-1.5 rounded-full">Ketua</span>
+</div>
+<div class="grid grid-cols-4 gap-2 mb-6 relative z-10 border-y border-border-subtle py-4">
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-primary">12</span>
+<span class="font-body-sm text-body-sm text-text-soft">Assigned</span>
+</div>
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-secondary">3</span>
+<span class="font-body-sm text-body-sm text-text-soft">In Progress</span>
+</div>
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-primary">8</span>
+<span class="font-body-sm text-body-sm text-text-soft">Done</span>
+</div>
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-primary">40%</span>
+<span class="font-body-sm text-body-sm text-text-soft">Kontribusi</span>
+</div>
+</div>
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span class="font-label text-label">Aktif</span>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-primary font-button text-button px-4 py-2 rounded-full transition-colors active:scale-95">Detail</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Budi (Anggota) -->
+<div class="bg-surface-card rounded-[24px] p-6 soft-shadow border border-border-subtle hover:border-pastel-lavender transition-colors group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-pastel-lavender opacity-20 rounded-bl-[100px] -z-0"></div>
+<div class="flex justify-between items-start relative z-10 mb-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-surface-main">
+<img alt="Budi Santoso" class="w-full h-full object-cover" data-alt="A close up portrait of a male student looking focused and collaborative, wearing a simple t-shirt. The setting is bright and modern with high-key lighting, maintaining a clean pastel UI aesthetic suitable for a SaaS dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4IJRT24RQp5c2g7lbh4ew_aI5GNYan3MyZ2hj2MgWJuwPaImS4tcaTqXNLmRcv1oabzR37ZBM3X-kknfnhSCkjuC-SMM2AqmGeXayzmRvyMTeGsUDzsrs5cgv7O-ue1FgYqVWgih21UUfnWyDPmmy2laSCA7vCTPryBPVBWivSQ0uQUBuoBwnbu2Fe6L_9IY7EeKd40XZ6T6ubWgnhQpeMwhG5ADgFlNUAAERaEyYUL4oqCHD-mFIhIM9pEshhsbuHoNk4NqFYTEu">
+</div>
+<div>
+<h3 class="font-heading-sm text-heading-sm text-primary mb-1">Budi Santoso</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">budi.s@univ.edu</p>
+</div>
+</div>
+<span class="bg-pastel-lavender text-primary font-label text-label px-3 py-1.5 rounded-full">Anggota</span>
+</div>
+<div class="grid grid-cols-4 gap-2 mb-6 relative z-10 border-y border-border-subtle py-4">
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-primary">8</span>
+<span class="font-body-sm text-body-sm text-text-soft">Assigned</span>
+</div>
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-secondary">2</span>
+<span class="font-body-sm text-body-sm text-text-soft">In Progress</span>
+</div>
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-primary">5</span>
+<span class="font-body-sm text-body-sm text-text-soft">Done</span>
+</div>
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-primary">25%</span>
+<span class="font-body-sm text-body-sm text-text-soft">Kontribusi</span>
+</div>
+</div>
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span class="font-label text-label">Aktif</span>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-primary font-button text-button px-4 py-2 rounded-full transition-colors active:scale-95">Detail</button>
+<button class="border border-error text-error hover:bg-error-container font-button text-button px-4 py-2 rounded-full transition-colors active:scale-95 hidden group-hover:block">Hapus</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Sinta (Anggota) -->
+<div class="bg-surface-card rounded-[24px] p-6 soft-shadow border border-border-subtle hover:border-pastel-lavender transition-colors group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-pastel-lavender opacity-20 rounded-bl-[100px] -z-0"></div>
+<div class="flex justify-between items-start relative z-10 mb-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-surface-main">
+<img alt="Sinta Aulia" class="w-full h-full object-cover" data-alt="A close up portrait of a female student with glasses, smiling softly. She looks studious and approachable. The lighting is soft and even, highlighting a pristine, bright, modern educational workspace vibe with a touch of pastel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTrMtIfpaxubWTprVpVY1H-BM0J8QubSfkpkqMMq0tu21qbkOaO9CL1N4a9M0Kff5L_YnRJfqXdIjeaym_jNX1Ln3EJSx5xyZK7CFD8bMl08GLWnzRMsStCI5sTucQ3HLlVrzD4wfp85Bo9OgKKk8xgatODrH3lwKUquic6vx62XCUOBnk5KIui2SKaYaKhe2fp1w7Rq_Lx0IAhXnPcL4GH13Hte1_3U6fC9LGoZbAjTPVSmsb1BmjiaqLSjnfVlv5oAjRNcFokxo5">
+</div>
+<div>
+<h3 class="font-heading-sm text-heading-sm text-primary mb-1">Sinta Aulia</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">sinta.a@univ.edu</p>
+</div>
+</div>
+<span class="bg-pastel-lavender text-primary font-label text-label px-3 py-1.5 rounded-full">Anggota</span>
+</div>
+<div class="grid grid-cols-4 gap-2 mb-6 relative z-10 border-y border-border-subtle py-4">
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-primary">10</span>
+<span class="font-body-sm text-body-sm text-text-soft">Assigned</span>
+</div>
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-secondary">4</span>
+<span class="font-body-sm text-body-sm text-text-soft">In Progress</span>
+</div>
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-primary">6</span>
+<span class="font-body-sm text-body-sm text-text-soft">Done</span>
+</div>
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-primary">25%</span>
+<span class="font-body-sm text-body-sm text-text-soft">Kontribusi</span>
+</div>
+</div>
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span class="font-label text-label">Aktif</span>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-primary font-button text-button px-4 py-2 rounded-full transition-colors active:scale-95">Detail</button>
+<button class="border border-error text-error hover:bg-error-container font-button text-button px-4 py-2 rounded-full transition-colors active:scale-95 hidden group-hover:block">Hapus</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Raka (Anggota - Kurang Aktif) -->
+<div class="bg-surface-card rounded-[24px] p-6 soft-shadow border border-border-subtle hover:border-pastel-pink transition-colors group relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-pastel-pink opacity-20 rounded-bl-[100px] -z-0"></div>
+<div class="flex justify-between items-start relative z-10 mb-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-surface-main opacity-80 grayscale-[20%]">
+<img alt="Raka Pratama" class="w-full h-full object-cover" data-alt="A close up portrait of a male student looking slightly distracted or tired. The lighting is still soft but perhaps a bit cooler, maintaining the overall light-mode aesthetic while subtly indicating less activity in a modern app context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-K9InGw1JYGeH3oEvpwEjwex8CSrgaL6k0jTUA8Gf9f0OnhTGlBz_4AFMBG4SLy06WnFskuNU1gAK0sPxtRmeOjBTfPNyRx_lSKHZodzlg_MGOW5DlIDR1rSVmIX0bWSpPo1Vcv6FoM08Cs2a-cw7xW3CQQffqTD4Y1bHfqub3PkDqah-rw291RPkR6mzOtBPsTQOiTC14X-yZffT7Qr4rIMUHq10ZQL4k2KKpYw6oWbh2Tv1OSPUH9QXMn-IvChUdqebSnWBk23o">
+</div>
+<div>
+<h3 class="font-heading-sm text-heading-sm text-primary mb-1">Raka Pratama</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">raka.p@univ.edu</p>
+</div>
+</div>
+<span class="bg-pastel-lavender text-primary font-label text-label px-3 py-1.5 rounded-full">Anggota</span>
+</div>
+<div class="grid grid-cols-4 gap-2 mb-6 relative z-10 border-y border-border-subtle py-4 opacity-80">
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-primary">5</span>
+<span class="font-body-sm text-body-sm text-text-soft">Assigned</span>
+</div>
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-secondary">0</span>
+<span class="font-body-sm text-body-sm text-text-soft">In Progress</span>
+</div>
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-primary">2</span>
+<span class="font-body-sm text-body-sm text-text-soft">Done</span>
+</div>
+<div class="text-center">
+<span class="block font-heading-md text-heading-md text-error">10%</span>
+<span class="font-body-sm text-body-sm text-text-soft">Kontribusi</span>
+</div>
+</div>
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+<span class="font-label text-label">Kurang Aktif</span>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-primary font-button text-button px-4 py-2 rounded-full transition-colors active:scale-95">Detail</button>
+<button class="border border-error text-error hover:bg-error-container font-button text-button px-4 py-2 rounded-full transition-colors active:scale-95 hidden group-hover:block">Hapus</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel (Summary) -->
+<aside class="w-full lg:w-80 flex-shrink-0 flex flex-col gap-6">
+<div class="bg-surface-card rounded-[24px] p-6 soft-shadow border border-border-subtle">
+<h2 class="font-heading-sm text-heading-sm text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">pie_chart</span>
+                            Ringkasan Tim
+                        </h2>
+<div class="flex flex-col gap-5">
+<div class="flex justify-between items-center pb-4 border-b border-border-subtle">
+<span class="font-body text-body text-text-secondary">Total Anggota</span>
+<span class="font-heading-sm text-heading-sm text-primary">4</span>
+</div>
+<div class="flex justify-between items-center pb-4 border-b border-border-subtle">
+<div class="flex items-center gap-2 text-text-secondary">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="font-body text-body">Aktif</span>
+</div>
+<span class="font-heading-sm text-heading-sm text-primary">3</span>
+</div>
+<div class="flex justify-between items-center pb-4 border-b border-border-subtle">
+<div class="flex items-center gap-2 text-text-secondary">
+<div class="w-2 h-2 rounded-full bg-pastel-pink"></div>
+<span class="font-body text-body">Kurang Aktif</span>
+</div>
+<span class="font-heading-sm text-heading-sm text-primary">1</span>
+</div>
+<div class="flex justify-between items-center pt-2">
+<span class="font-body text-body text-text-secondary">Rata-rata Kontribusi</span>
+<div class="bg-pastel-blue text-primary font-label text-label px-3 py-1.5 rounded-full">
+                                    25%
+                                </div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-border-subtle">
+<button class="w-full bg-primary text-on-primary font-button text-button py-3 rounded-full hover:bg-tertiary-container transition-colors active:scale-95 flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                                Tambah Anggota
+                            </button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</body></html>
