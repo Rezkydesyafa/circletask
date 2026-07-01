@@ -38,29 +38,45 @@ export function RegisterForm() {
     form.clearErrors("root");
 
     startTransition(async () => {
-      const result = await registerAction(values);
+      try {
+        const result = await registerAction(values);
 
-      if (result.status === "error") {
-        form.setError("root", {
-          message: result.message ?? "Registrasi gagal.",
-        });
-
-        for (const [field, messages] of Object.entries(result.fieldErrors ?? {})) {
-          if (messages?.[0]) {
-            form.setError(field as keyof RegisterInput, { message: messages[0] });
-          }
+        if (!result) {
+          form.setError("root", {
+            message: "Registrasi gagal. Server tidak mengembalikan response yang valid.",
+          });
+          return;
         }
 
-        return;
-      }
+        if (result.status === "error") {
+          form.setError("root", {
+            message: result.message ?? "Registrasi gagal.",
+          });
 
-      if (result.message) {
-        setSuccessMessage(result.message);
-      }
+          for (const [field, messages] of Object.entries(result.fieldErrors ?? {})) {
+            if (messages?.[0]) {
+              form.setError(field as keyof RegisterInput, { message: messages[0] });
+            }
+          }
 
-      if (result.redirectTo) {
-        router.push(result.redirectTo as Route);
-        router.refresh();
+          return;
+        }
+
+        if (result.message) {
+          setSuccessMessage(result.message);
+        }
+
+        if (result.redirectTo) {
+          router.push(result.redirectTo as Route);
+          router.refresh();
+        }
+      } catch (error) {
+        form.setError("root", {
+          message:
+            error instanceof Error
+              ? error.message
+              : "Registrasi gagal. Periksa koneksi Supabase dan coba lagi.",
+        });
       }
     });
   });

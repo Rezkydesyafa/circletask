@@ -39,7 +39,7 @@ export function GroupShell({ children, group }: GroupShellProps) {
   );
 
   return (
-    <div className="mx-auto flex h-[calc(100vh-24px)] w-full max-w-[1440px] overflow-hidden rounded-[32px] border border-border-subtle bg-shell-bg shadow-[0_20px_40px_rgba(0,0,0,0.04)] md:h-[calc(100vh-40px)]">
+    <div className="flex h-full min-h-0 w-full overflow-hidden bg-shell-bg text-text-primary">
       <aside className="hidden w-sidebar-width shrink-0 flex-col items-center border-r border-border-subtle bg-shell-bg py-shell-padding lg:flex">
         <Link
           aria-label="Kembali ke daftar kelompok"
@@ -89,7 +89,6 @@ export function GroupShell({ children, group }: GroupShellProps) {
       </aside>
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <GroupTopBar group={group} />
         <main className="min-h-0 flex-1 overflow-y-auto px-5 py-6 pb-28 md:px-page-padding lg:pb-8">
           {children}
         </main>
@@ -124,44 +123,6 @@ export function GroupShell({ children, group }: GroupShellProps) {
         })}
       </nav>
     </div>
-  );
-}
-
-function GroupTopBar({ group }: { group: GroupListItem }) {
-  return (
-    <header className="flex h-[72px] shrink-0 items-center justify-between border-b border-border-subtle bg-shell-bg px-5 md:px-page-padding">
-      <div className="hidden min-w-0 flex-1 md:flex">
-        <div className="relative w-full max-w-[360px] rounded-full focus-within:ring-2 focus-within:ring-primary/10">
-          <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[20px] text-text-soft">
-            search
-          </span>
-          <input
-            className="h-10 w-full rounded-full border border-border-subtle bg-surface-card pl-11 pr-4 font-body-sm text-body-sm text-text-primary placeholder:text-text-soft focus:border-primary focus:outline-none"
-            placeholder="Cari project atau task..."
-            type="text"
-          />
-        </div>
-      </div>
-
-      <div className="min-w-0 md:hidden">
-        <p className="truncate font-button text-button text-text-primary">{group.name}</p>
-        <p className="mt-1 font-body-sm text-body-sm text-text-soft">
-          {group.role === "leader" ? "Ketua" : "Anggota"}
-        </p>
-      </div>
-
-      <div className="flex shrink-0 items-center gap-3">
-        <button
-          className="flex h-10 w-10 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-surface-container-high hover:text-primary"
-          type="button"
-        >
-          <span className="material-symbols-outlined text-[22px]">notifications</span>
-        </button>
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-pastel-lavender font-button text-button text-primary">
-          FA
-        </div>
-      </div>
-    </header>
   );
 }
 
