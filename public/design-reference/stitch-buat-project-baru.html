@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Buat Project Baru - CircleTask</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "text-soft": "#9A9A9A",
+                      "surface-bright": "#fdf8f8",
+                      "tertiary-container": "#1d1b1a",
+                      "text-secondary": "#6F6F6F",
+                      "surface-container-low": "#f7f3f2",
+                      "inverse-primary": "#c8c6c5",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#858383",
+                      "on-background": "#1c1b1b",
+                      "pastel-orange": "#F6DFC8",
+                      "on-secondary-fixed": "#0c1f1a",
+                      "primary-container": "#1c1b1b",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-secondary-container": "#536760",
+                      "inverse-on-surface": "#f4f0ef",
+                      "secondary": "#4f635c",
+                      "on-tertiary-fixed-variant": "#484645",
+                      "on-primary-fixed-variant": "#474646",
+                      "tertiary-fixed-dim": "#cac6c3",
+                      "surface-main": "#FCFAF5",
+                      "on-primary": "#ffffff",
+                      "shell-bg": "#F7F4EC",
+                      "on-error": "#ffffff",
+                      "text-primary": "#171717",
+                      "pastel-lavender": "#E7E0FA",
+                      "tertiary": "#000000",
+                      "outline-variant": "#c4c7c7",
+                      "on-tertiary-container": "#868381",
+                      "mint-strong": "#BFE8D7",
+                      "secondary-fixed": "#d2e7df",
+                      "pastel-blue": "#D9ECF6",
+                      "primary": "#000000",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#ebe7e6",
+                      "page-bg": "#DDECEA",
+                      "border-subtle": "#E8E2D8",
+                      "tertiary-fixed": "#e6e1df",
+                      "inverse-surface": "#313030",
+                      "on-surface": "#1c1b1b",
+                      "on-surface-variant": "#444748",
+                      "on-tertiary-fixed": "#1d1b1a",
+                      "outline": "#747878",
+                      "surface-card": "#FFFFFF",
+                      "surface": "#fdf8f8",
+                      "primary-fixed": "#e5e2e1",
+                      "secondary-container": "#cfe5dc",
+                      "surface-variant": "#e5e2e1",
+                      "on-primary-fixed": "#1c1b1b",
+                      "secondary-fixed-dim": "#b6cbc3",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "on-secondary-fixed-variant": "#374b44",
+                      "pastel-pink": "#F6DCE8",
+                      "pastel-yellow": "#F8E7A8",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#f1edec",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#ddd9d8",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-tint": "#5f5e5e",
+                      "background": "#fdf8f8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "shell-padding": "20px",
+                      "section-gap": "24px",
+                      "card-gap": "16px",
+                      "sidebar-width": "84px",
+                      "page-padding": "32px"
+              },
+              "fontFamily": {
+                      "button": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "heading-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "heading-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "heading-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-sm": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "button": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body": [
+                              "15px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display": [
+                              "42px",
+                              {
+                                      "lineHeight": "1.15",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "heading-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.35",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "heading-md": [
+                              "22px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "heading-lg": [
+                              "30px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-page-bg min-h-screen flex items-center justify-center p-4">
+<!-- Main Shell -->
+<div class="bg-shell-bg w-full max-w-[1440px] h-[921px] rounded-[32px] shadow-[0_20px_40px_rgba(0,0,0,0.04)] flex overflow-hidden border border-border-subtle">
+<!-- SideNavBar -->
+<aside class="w-sidebar-width h-full rounded-l-[32px] bg-surface-main shadow-sm flex flex-col items-center py-8 z-50 border-r border-border-subtle">
+<!-- Brand Logo -->
+<div class="mb-12 font-heading-md text-heading-md text-primary flex items-center justify-center w-12 h-12 bg-pastel-blue rounded-full">
+                CT
+            </div>
+<!-- Navigation Items -->
+<nav class="flex flex-col gap-4">
+<a aria-label="Dashboard" class="text-text-soft w-12 h-12 flex items-center justify-center transition-all duration-300 hover:text-primary scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</a>
+<a aria-label="Groups" class="text-text-soft w-12 h-12 flex items-center justify-center transition-all duration-300 hover:text-primary scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</a>
+<a aria-label="Tasks" class="bg-primary text-on-primary rounded-full w-12 h-12 flex items-center justify-center transition-all duration-300 scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="assignment" data-weight="fill" style="font-variation-settings: 'FILL' 1;">assignment</span>
+</a>
+<a aria-label="Contribution" class="text-text-soft w-12 h-12 flex items-center justify-center transition-all duration-300 hover:text-primary scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-4">
+<a aria-label="Settings" class="text-text-soft w-12 h-12 flex items-center justify-center transition-all duration-300 hover:text-primary scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full bg-surface-main overflow-y-auto">
+<!-- TopNavBar -->
+<header class="h-20 flex justify-between items-center px-page-padding w-full bg-transparent">
+<!-- Search -->
+<div class="flex-1 max-w-md relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-soft" data-icon="search">search</span>
+<input class="w-full h-10 pl-12 pr-4 bg-surface-card rounded-[18px] border border-border-subtle font-body text-body text-text-primary placeholder:text-text-soft focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all" placeholder="Cari project..." type="text"/>
+</div>
+<!-- Right Actions -->
+<div class="flex items-center gap-6">
+<button class="text-text-soft hover:text-primary transition-colors focus:outline-none relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="font-body text-body text-text-primary font-semibold">Fajar Atmin</p>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary text-on-primary font-label text-[10px]">Ketua</span>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-border-subtle bg-surface-dim">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A small circular avatar placeholder showing a friendly student face in a bright modern educational setting, soft lighting, minimalistic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaEvR8Z_UOX_j1-BwG_ALMi870pymQOYQJyQSaUQawQhGf_517oRoKQ0rt3bZQTxslZ3VA7EnnRpcjw78wcTDpf1t4sfAm63264qygROsUBIpZ8MmG0-UN_rGuGLqIk10IhJUBBXh9oQ89ZbNkS7W3NPu-8_UofinJowtCVH0Au3yuzx3VAxX7HcFA-6ydIoOf5zmr7lUffOjUY8D5bk6Nq4rwQ8Zdj3GDY4PzOHP9-rDa_-XvSxsh9Lrp-dKmGQxWNXKcqtPuvDWD"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-page-padding flex-1">
+<!-- Header Section -->
+<div class="mb-section-gap flex flex-col gap-2">
+<div class="flex items-center gap-2 mb-2">
+<span class="font-label text-label text-text-soft uppercase tracking-wider">Kelompok AI Praktikum</span>
+<span class="material-symbols-outlined text-[16px] text-text-soft" data-icon="chevron_right">chevron_right</span>
+<span class="font-label text-label text-primary uppercase tracking-wider">Buat Project</span>
+</div>
+<h1 class="font-heading-lg text-heading-lg text-text-primary tracking-tight">Buat Project Baru</h1>
+<p class="font-body text-body text-text-secondary">Buat project besar, lalu pecah menjadi beberapa task.</p>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-section-gap">
+<!-- Left Form Column -->
+<div class="lg:col-span-2">
+<div class="bg-surface-card rounded-[24px] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-border-subtle">
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="font-label text-label text-text-secondary">Nama Project</label>
+<input class="w-full bg-surface-main rounded-[18px] border border-border-subtle px-4 py-3 font-body text-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all placeholder:text-text-soft" placeholder="Masukkan nama project" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-label text-text-secondary">Deskripsi Project</label>
+<textarea class="w-full bg-surface-main rounded-[18px] border border-border-subtle px-4 py-3 font-body text-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all placeholder:text-text-soft resize-none" placeholder="Jelaskan tujuan project ini..." rows="3"></textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-label text-text-secondary">Deadline Project</label>
+<div class="relative">
+<input class="w-full bg-surface-main rounded-[18px] border border-border-subtle px-4 py-3 font-body text-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all text-text-soft" type="date"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-label text-text-secondary">Kategori Project</label>
+<div class="relative">
+<select class="w-full bg-surface-main rounded-[18px] border border-border-subtle px-4 py-3 font-body text-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all appearance-none">
+<option class="text-text-soft" disabled="" selected="" value="">Pilih kategori...</option>
+<option value="tugas">Tugas Akhir</option>
+<option value="praktikum">Praktikum</option>
+<option value="riset">Riset</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-soft pointer-events-none" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-label text-text-secondary">Catatan Tambahan (Opsional)</label>
+<textarea class="w-full bg-surface-main rounded-[18px] border border-border-subtle px-4 py-3 font-body text-body text-text-primary focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all placeholder:text-text-soft resize-none" placeholder="Catatan internal..." rows="2"></textarea>
+</div>
+<div class="pt-4 flex gap-4">
+<button class="bg-primary text-on-primary font-button text-button px-8 py-3 rounded-full hover:bg-tertiary-container transition-colors shadow-sm" type="button">
+                                        Buat Project
+                                    </button>
+<button class="bg-surface-card text-text-primary font-button text-button px-8 py-3 rounded-full border border-border-subtle hover:bg-surface-container-low transition-colors" type="button">
+                                        Batal
+                                    </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Right Column -->
+<div class="flex flex-col gap-card-gap">
+<!-- Preview Card -->
+<div class="bg-surface-card rounded-[24px] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-border-subtle flex flex-col gap-4">
+<h3 class="font-heading-sm text-heading-sm text-text-primary">Preview Project</h3>
+<!-- Mockup Card -->
+<div class="bg-surface-main border border-border-subtle rounded-[18px] p-5 flex flex-col gap-3 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-pastel-blue rounded-bl-full opacity-20"></div>
+<div class="flex justify-between items-start">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-pastel-blue text-primary font-label text-[10px]">Status: Aktif</span>
+<span class="material-symbols-outlined text-text-soft text-xl" data-icon="more_horiz">more_horiz</span>
+</div>
+<div>
+<div class="font-heading-sm text-heading-sm text-text-primary mb-1 truncate">Judul Project Baru</div>
+<div class="font-body-sm text-body-sm text-text-soft">Total task: 0</div>
+</div>
+<div class="mt-2 flex flex-col gap-1.5">
+<div class="flex justify-between font-label text-label text-text-secondary">
+<span>Progress</span>
+<span>0%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full w-[0%]"></div>
+</div>
+</div>
+<div class="mt-2 pt-3 border-t border-border-subtle/50 text-center">
+<span class="font-body-sm text-body-sm text-text-soft italic">Belum ada task.</span>
+</div>
+</div>
+</div>
+<!-- Info Card -->
+<div class="bg-mint-strong/30 rounded-[24px] p-6 border border-mint-strong/50 flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-surface-card flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-xl" data-icon="info">info</span>
+</div>
+<p class="font-body text-body text-on-surface-variant pt-1 leading-relaxed">
+                                Setelah project dibuat, ketua dapat membuat task dan membagikannya ke anggota kelompok.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

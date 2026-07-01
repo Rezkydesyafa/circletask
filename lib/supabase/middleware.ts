@@ -49,9 +49,14 @@ export async function updateSession(request: NextRequest) {
     }
   );
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  let user = null;
+  try {
+    const { data } = await supabase.auth.getUser();
+    user = data.user;
+  } catch {
+    // Supabase unavailable or misconfigured — skip auth checks, let page render
+    return response;
+  }
 
   const { pathname } = request.nextUrl;
 
@@ -71,3 +76,4 @@ export async function updateSession(request: NextRequest) {
 
   return response;
 }
+

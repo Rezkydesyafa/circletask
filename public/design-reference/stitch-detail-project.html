@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detail Project - CircleTask</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "text-soft": "#9A9A9A",
+                      "surface-bright": "#fdf8f8",
+                      "tertiary-container": "#1d1b1a",
+                      "text-secondary": "#6F6F6F",
+                      "surface-container-low": "#f7f3f2",
+                      "inverse-primary": "#c8c6c5",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#858383",
+                      "on-background": "#1c1b1b",
+                      "pastel-orange": "#F6DFC8",
+                      "on-secondary-fixed": "#0c1f1a",
+                      "primary-container": "#1c1b1b",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-secondary-container": "#536760",
+                      "inverse-on-surface": "#f4f0ef",
+                      "secondary": "#4f635c",
+                      "on-tertiary-fixed-variant": "#484645",
+                      "on-primary-fixed-variant": "#474646",
+                      "tertiary-fixed-dim": "#cac6c3",
+                      "surface-main": "#FCFAF5",
+                      "on-primary": "#ffffff",
+                      "shell-bg": "#F7F4EC",
+                      "on-error": "#ffffff",
+                      "text-primary": "#171717",
+                      "pastel-lavender": "#E7E0FA",
+                      "tertiary": "#000000",
+                      "outline-variant": "#c4c7c7",
+                      "on-tertiary-container": "#868381",
+                      "mint-strong": "#BFE8D7",
+                      "secondary-fixed": "#d2e7df",
+                      "pastel-blue": "#D9ECF6",
+                      "primary": "#000000",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#ebe7e6",
+                      "page-bg": "#DDECEA",
+                      "border-subtle": "#E8E2D8",
+                      "tertiary-fixed": "#e6e1df",
+                      "inverse-surface": "#313030",
+                      "on-surface": "#1c1b1b",
+                      "on-surface-variant": "#444748",
+                      "on-tertiary-fixed": "#1d1b1a",
+                      "outline": "#747878",
+                      "surface-card": "#FFFFFF",
+                      "surface": "#fdf8f8",
+                      "primary-fixed": "#e5e2e1",
+                      "secondary-container": "#cfe5dc",
+                      "surface-variant": "#e5e2e1",
+                      "on-primary-fixed": "#1c1b1b",
+                      "secondary-fixed-dim": "#b6cbc3",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "on-secondary-fixed-variant": "#374b44",
+                      "pastel-pink": "#F6DCE8",
+                      "pastel-yellow": "#F8E7A8",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#f1edec",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#ddd9d8",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-tint": "#5f5e5e",
+                      "background": "#fdf8f8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "shell-padding": "20px",
+                      "section-gap": "24px",
+                      "card-gap": "16px",
+                      "sidebar-width": "84px",
+                      "page-padding": "32px"
+              },
+              "fontFamily": {
+                      "button": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "heading-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "heading-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "heading-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-sm": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "button": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body": [
+                              "15px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display": [
+                              "42px",
+                              {
+                                      "lineHeight": "1.15",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "heading-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.35",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "heading-md": [
+                              "22px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "heading-lg": [
+                              "30px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #DDECEA; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.filled { font-variation-settings: 'FILL' 1; }
+        
+        /* Soft shadows */
+        .shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
+        .shadow-inner-soft { box-shadow: inset 0 2px 10px rgba(0,0,0,0.02); }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #E8E2D8; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #DDECEA; }
+    </style>
+</head>
+<body class="bg-page-bg min-h-screen text-text-primary p-shell-padding flex">
+<!-- Global App Shell -->
+<div class="bg-shell-bg rounded-[32px] shadow-[0_20px_40px_rgba(0,0,0,0.04)] w-full h-[calc(100vh-40px)] flex overflow-hidden border border-border-subtle">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col items-center py-8 z-50 bg-surface-main dark:bg-tertiary-container w-sidebar-width h-full rounded-l-3xl shadow-sm shadow-[0_20px_40px_rgba(0,0,0,0.04)] hidden md:flex border-r border-border-subtle">
+<div class="mb-10 font-heading-md text-heading-md text-primary dark:text-primary-fixed">CT</div>
+<nav class="flex flex-col gap-4 items-center">
+<a aria-label="Dashboard" class="text-text-soft dark:text-on-primary-container w-12 h-12 flex items-center justify-center transition-all duration-300 hover:text-primary dark:hover:text-primary-fixed scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined text-2xl">dashboard</span>
+</a>
+<a aria-label="Groups" class="bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed rounded-full w-12 h-12 flex items-center justify-center transition-all duration-300 hover:text-primary dark:hover:text-primary-fixed scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined text-2xl filled">group</span>
+</a>
+<a aria-label="Tasks" class="text-text-soft dark:text-on-primary-container w-12 h-12 flex items-center justify-center transition-all duration-300 hover:text-primary dark:hover:text-primary-fixed scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined text-2xl">assignment</span>
+</a>
+<a aria-label="Contribution" class="text-text-soft dark:text-on-primary-container w-12 h-12 flex items-center justify-center transition-all duration-300 hover:text-primary dark:hover:text-primary-fixed scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined text-2xl">leaderboard</span>
+</a>
+<a aria-label="Activity" class="text-text-soft dark:text-on-primary-container w-12 h-12 flex items-center justify-center transition-all duration-300 hover:text-primary dark:hover:text-primary-fixed scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined text-2xl">rebase_edit</span>
+</a>
+<a aria-label="Reports" class="text-text-soft dark:text-on-primary-container w-12 h-12 flex items-center justify-center transition-all duration-300 hover:text-primary dark:hover:text-primary-fixed scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined text-2xl">assessment</span>
+</a>
+<a aria-label="Settings" class="text-text-soft dark:text-on-primary-container w-12 h-12 flex items-center justify-center transition-all duration-300 hover:text-primary dark:hover:text-primary-fixed scale-95 active:scale-90 mt-auto" href="#">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-sidebar-width flex flex-col h-full bg-surface-main relative z-0">
+<!-- TopNavBar (Contextual for this screen) -->
+<header class="flex justify-between items-center px-page-padding w-full h-20 bg-transparent shrink-0">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center text-text-secondary hover:bg-shell-bg transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-heading-md text-heading-md text-primary">Groups</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative focus-within:ring-2 focus-within:ring-primary/10 rounded-full bg-shell-bg px-4 py-2 flex items-center">
+<span class="material-symbols-outlined text-text-soft mr-2">search</span>
+<input class="bg-transparent border-none focus:outline-none font-body-sm text-body-sm text-text-primary placeholder:text-text-soft w-48" placeholder="Search tasks..." type="text"/>
+</div>
+<button class="text-text-soft hover:bg-surface-container-low transition-all w-10 h-10 rounded-full flex items-center justify-center relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="w-10 h-10 rounded-full bg-pastel-lavender overflow-hidden border border-border-subtle shrink-0">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A portrait photograph of a confident young Indonesian male student smiling subtly. He is wearing a simple casual sweater in soft beige. The background is a highly blurred, minimalist workspace with warm, gentle lighting highlighting his face. The overall aesthetic is clean, bright, and professional yet approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIfDE9ArhtxrnnEJgoZQ59rLtLfc4QK_K5WHn6ym4SAPX3QH0hZkPkFo9sGzBI_OCRBLQ-DTA7E3DDFOFlFXZzv-nXW9lnGKmam7c8fLoew3TdFeLsrAYGJooaNQr0WLzT37p_GyR62HJy6u_ROdvtXTo_STHhCCCFZHuA9xJMP8302dUosq1CEPsE_nT1bNFS6KzyDJVK3PV--sarucDS3EtGgpBaMf-Qgq7lul0Vwy0NWN73Hk1oBIp-IPWkINS_bS8BB3TH6XEZ"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto px-page-padding pb-page-padding flex flex-col lg:flex-row gap-section-gap">
+<!-- Left Column (Primary Tasks) -->
+<div class="flex-1 flex flex-col gap-section-gap">
+<!-- Project Header Card -->
+<div class="bg-surface-card rounded-[24px] p-6 shadow-soft border border-border-subtle relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-pastel-blue opacity-30 rounded-full blur-[80px] -mr-10 -mt-10 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div>
+<h2 class="font-heading-lg text-heading-lg text-primary mb-2">Website CircleTask</h2>
+<p class="font-body text-body text-text-secondary max-w-2xl">Membuat prototype aplikasi manajemen tugas kelompok.</p>
+</div>
+<div class="flex gap-2">
+<button class="font-button text-button bg-surface-card border border-border-subtle text-text-primary px-4 py-2 rounded-full hover:bg-shell-bg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                                    Edit Project
+                                </button>
+<button class="font-button text-button bg-primary text-on-primary px-5 py-2 rounded-full hover:bg-tertiary-container transition-colors flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                                    Buat Task
+                                </button>
+</div>
+</div>
+<div class="flex items-center gap-3 mb-6 relative z-10">
+<span class="bg-shell-bg text-text-secondary font-label text-label px-3 py-1.5 rounded-full border border-border-subtle flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">group</span>
+                                Kelompok AI Praktikum
+                            </span>
+<span class="bg-mint-strong/30 text-secondary font-label text-label px-3 py-1.5 rounded-full flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+                                Aktif
+                            </span>
+<span class="bg-pastel-orange/40 text-on-surface font-label text-label px-3 py-1.5 rounded-full flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                                3 hari lagi
+                            </span>
+</div>
+<div class="relative z-10">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label text-label text-text-secondary uppercase tracking-wider">Progress Project</span>
+<span class="font-heading-sm text-heading-sm text-primary">72%</span>
+</div>
+<div class="h-2 w-full bg-shell-bg rounded-full overflow-hidden border border-border-subtle">
+<div class="h-full bg-primary rounded-full w-[72%] relative">
+<div class="absolute inset-0 bg-white/20 w-full h-full transform -skew-x-12 translate-x-[-100%] animate-[shimmer_2s_infinite]"></div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-text-soft mt-2 text-right">7 dari 10 task selesai</p>
+</div>
+</div>
+<!-- Metric Row Bento -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-card-gap">
+<div class="bg-surface-card rounded-[24px] p-5 border border-border-subtle shadow-soft flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-shell-bg to-transparent opacity-50"></div>
+<div class="relative z-10 flex justify-between items-start">
+<span class="font-body-sm text-body-sm text-text-secondary">Total Task</span>
+<span class="material-symbols-outlined text-text-soft">list_alt</span>
+</div>
+<span class="relative z-10 font-heading-lg text-heading-lg text-primary">10</span>
+</div>
+<div class="bg-mint-strong/20 rounded-[24px] p-5 border border-mint-strong/40 shadow-soft flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-mint-strong/10 to-transparent opacity-50"></div>
+<div class="relative z-10 flex justify-between items-start">
+<span class="font-body-sm text-body-sm text-secondary">Selesai</span>
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+</div>
+<span class="relative z-10 font-heading-lg text-heading-lg text-secondary">7</span>
+</div>
+<div class="bg-pastel-yellow/30 rounded-[24px] p-5 border border-pastel-yellow/50 shadow-soft flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-pastel-yellow/20 to-transparent opacity-50"></div>
+<div class="relative z-10 flex justify-between items-start">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Menunggu Review</span>
+<span class="material-symbols-outlined text-on-surface-variant">visibility</span>
+</div>
+<span class="relative z-10 font-heading-lg text-heading-lg text-on-surface-variant">2</span>
+</div>
+<div class="bg-error-container/30 rounded-[24px] p-5 border border-error-container/50 shadow-soft flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-error-container/20 to-transparent opacity-50"></div>
+<div class="relative z-10 flex justify-between items-start">
+<span class="font-body-sm text-body-sm text-error">Overdue</span>
+<span class="material-symbols-outlined text-error">error</span>
+</div>
+<span class="relative z-10 font-heading-lg text-heading-lg text-error">1</span>
+</div>
+</div>
+<!-- Tasks List Section -->
+<div class="bg-surface-card rounded-[24px] shadow-soft border border-border-subtle p-6 flex-1 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-heading-sm text-heading-sm text-primary">Daftar Task</h3>
+<!-- Filter Chips -->
+<div class="flex gap-2 overflow-x-auto pb-2 -mb-2 hide-scrollbar">
+<button class="font-label text-label bg-primary text-on-primary px-4 py-2 rounded-full whitespace-nowrap shadow-sm">Semua</button>
+<button class="font-label text-label bg-shell-bg border border-border-subtle text-text-secondary hover:bg-surface-container-low px-4 py-2 rounded-full whitespace-nowrap transition-colors">To Do</button>
+<button class="font-label text-label bg-shell-bg border border-border-subtle text-text-secondary hover:bg-surface-container-low px-4 py-2 rounded-full whitespace-nowrap transition-colors">In Progress</button>
+<button class="font-label text-label bg-shell-bg border border-border-subtle text-text-secondary hover:bg-surface-container-low px-4 py-2 rounded-full whitespace-nowrap transition-colors">Submit Review</button>
+</div>
+</div>
+<!-- Task List Items -->
+<div class="flex flex-col gap-3">
+<!-- Task Item 1 (Done) -->
+<div class="group flex items-center p-4 rounded-xl border border-border-subtle bg-surface-main hover:bg-shell-bg hover:border-text-soft/30 transition-all shadow-sm">
+<div class="mr-4 mt-1 self-start">
+<span class="material-symbols-outlined text-mint-strong filled text-[24px]">check_circle</span>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h4 class="font-heading-sm text-heading-sm text-primary group-hover:text-tertiary-container transition-colors">Desain UI/UX Mockup</h4>
+<div class="flex gap-2">
+<span class="bg-pastel-blue/40 text-on-surface font-label text-label px-2.5 py-1 rounded-md text-[10px]">High</span>
+<span class="bg-mint-strong/30 text-secondary font-label text-label px-2.5 py-1 rounded-md text-[10px]">Done</span>
+</div>
+</div>
+<div class="flex items-center gap-4 flex-wrap">
+<div class="flex items-center gap-1.5 text-text-secondary">
+<div class="w-5 h-5 rounded-full bg-pastel-yellow overflow-hidden">
+<img alt="Fajar" class="w-full h-full object-cover" data-alt="A small circular avatar placeholder showing a generic simplified flat vector illustration of a person's face on a soft yellow background. The style is modern, minimal, and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyVWXYypT6aYxOFmFdpmJYuLXkJIMDQtxutdL6lwvfnHxqA2_Aiqf-2Sn348Y7WZuO780iV_jvLsEA6OSFgEFaQegMdbPZzx-0Lrxx1gxFHZNRTPJptlza5YYEwHF2HgLZqly0sIHPlmIG_3nN0HRZYNjx2Fb6flyGddFRV6EAIPCBMW0cUGYni37GQ8RRxT5SeGVq0-lipzhwRPVH9CHR20KH2sYGvDu4ocQE5JXLhUgAxGcldHyjXRCZJ11hdUyDO9JvS1ZJ-l_C"/>
+</div>
+<span class="font-body-sm text-body-sm">Fajar</span>
+</div>
+<span class="w-1 h-1 bg-border-subtle rounded-full"></span>
+<div class="flex items-center gap-1 text-text-soft font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                            Kemarin
+                                        </div>
+<span class="w-1 h-1 bg-border-subtle rounded-full"></span>
+<div class="flex items-center gap-1 text-text-soft font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">weight</span>
+                                            20 pts
+                                        </div>
+<span class="w-1 h-1 bg-border-subtle rounded-full"></span>
+<div class="flex items-center gap-1 text-text-soft font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">attachment</span>
+                                            2 Bukti
+                                        </div>
+</div>
+</div>
+<div class="ml-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity self-center">
+<button class="font-button text-button text-text-primary bg-surface-card border border-border-subtle px-3 py-1.5 rounded-lg hover:bg-shell-bg transition-colors">Review</button>
+</div>
+</div>
+<!-- Task Item 2 (In Progress) -->
+<div class="group flex items-center p-4 rounded-xl border border-border-subtle bg-surface-main hover:bg-shell-bg hover:border-text-soft/30 transition-all shadow-sm">
+<div class="mr-4 mt-1 self-start">
+<span class="material-symbols-outlined text-pastel-blue filled text-[24px]">radio_button_unchecked</span>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h4 class="font-heading-sm text-heading-sm text-primary group-hover:text-tertiary-container transition-colors">Setup Database</h4>
+<div class="flex gap-2">
+<span class="bg-shell-bg border border-border-subtle text-text-secondary font-label text-label px-2.5 py-1 rounded-md text-[10px]">Medium</span>
+<span class="bg-pastel-blue/40 text-on-surface font-label text-label px-2.5 py-1 rounded-md text-[10px]">In Progress</span>
+</div>
+</div>
+<div class="flex items-center gap-4 flex-wrap">
+<div class="flex items-center gap-1.5 text-text-secondary">
+<div class="w-5 h-5 rounded-full bg-pastel-orange overflow-hidden">
+<img alt="Budi" class="w-full h-full object-cover" data-alt="A small circular avatar placeholder showing a generic simplified flat vector illustration of a person's face on a soft pastel orange background. The style is modern, minimal, and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvppvbhPqc2paJ8VS1g69_q5id1GwSOGZNKvulwHA7P8nocdnL9BSAyJerIJE5i_fFKyIvdkVCNTiv2T5m5EqKmdrnzMPzg4kCWNDDkP68WJZeLxa4U5jKXpemWk26CWnRcOTeyc3nvrGvZl9LryiOn2O0HFNPwmWS1zZe8tfMNohB-MC6Xu8p5sQQ9lPSyWpnQlxUll6TjR2Sz94899elOKk6xbxQOaVzPqA93Gf_MeCLRQLvRDrUkeCJsz51njf5lWtFijqpocUy"/>
+</div>
+<span class="font-body-sm text-body-sm">Budi</span>
+</div>
+<span class="w-1 h-1 bg-border-subtle rounded-full"></span>
+<div class="flex items-center gap-1 text-pastel-orange font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                            H-2
+                                        </div>
+<span class="w-1 h-1 bg-border-subtle rounded-full"></span>
+<div class="flex items-center gap-1 text-text-soft font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">weight</span>
+                                            15 pts
+                                        </div>
+</div>
+</div>
+<div class="ml-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity self-center">
+<button class="font-button text-button text-text-primary bg-surface-card border border-border-subtle px-3 py-1.5 rounded-lg hover:bg-shell-bg transition-colors">Reassign</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel (Sidebar Content) -->
+<div class="w-full lg:w-80 flex flex-col gap-section-gap shrink-0">
+<!-- Upcoming Deadlines -->
+<div class="bg-surface-card rounded-[24px] shadow-soft border border-border-subtle p-5">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-error">alarm</span>
+<h3 class="font-heading-sm text-heading-sm text-primary">Deadline Terdekat</h3>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3 p-3 rounded-xl bg-error-container/10 border border-error-container/30">
+<div class="w-2 h-2 rounded-full bg-error mt-1.5 shrink-0"></div>
+<div>
+<p class="font-body-sm text-body-sm text-text-primary mb-1">Finalisasi Laporan Bab 1-3</p>
+<p class="font-label text-label text-error">Besok, 23:59</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl bg-shell-bg border border-border-subtle">
+<div class="w-2 h-2 rounded-full bg-pastel-orange mt-1.5 shrink-0"></div>
+<div>
+<p class="font-body-sm text-body-sm text-text-primary mb-1">Setup Database</p>
+<p class="font-label text-label text-text-soft">H-2</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Activity -->
+<div class="bg-surface-card rounded-[24px] shadow-soft border border-border-subtle p-5 flex-1 flex flex-col">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-text-secondary">history</span>
+<h3 class="font-heading-sm text-heading-sm text-primary">Aktivitas Project</h3>
+</div>
+<div class="relative pl-3 flex-1 flex flex-col gap-6 before:content-[''] before:absolute before:left-[15px] before:top-2 before:bottom-2 before:w-[2px] before:bg-border-subtle">
+<div class="relative flex items-start gap-4">
+<div class="w-[10px] h-[10px] rounded-full bg-mint-strong border-[2px] border-surface-card absolute -left-[4px] top-1.5 z-10"></div>
+<div class="pl-2">
+<p class="font-body-sm text-body-sm text-text-primary">
+<span class="font-heading-sm">Fajar</span> menyelesaikan <span class="text-text-secondary">Desain UI/UX Mockup</span>
+</p>
+<p class="font-label text-label text-text-soft mt-1">Hari ini, 10:24</p>
+</div>
+</div>
+<div class="relative flex items-start gap-4">
+<div class="w-[10px] h-[10px] rounded-full bg-pastel-yellow border-[2px] border-surface-card absolute -left-[4px] top-1.5 z-10"></div>
+<div class="pl-2">
+<p class="font-body-sm text-body-sm text-text-primary">
+<span class="font-heading-sm">Siti</span> meminta review untuk <span class="text-text-secondary">Struktur Tabel User</span>
+</p>
+<p class="font-label text-label text-text-soft mt-1">Kemarin, 15:30</p>
+</div>
+</div>
+<div class="relative flex items-start gap-4">
+<div class="w-[10px] h-[10px] rounded-full bg-primary-fixed-dim border-[2px] border-surface-card absolute -left-[4px] top-1.5 z-10"></div>
+<div class="pl-2">
+<p class="font-body-sm text-body-sm text-text-primary">
+<span class="font-heading-sm">Anda</span> menambahkan task baru <span class="text-text-secondary">Setup Database</span>
+</p>
+<p class="font-label text-label text-text-soft mt-1">2 hari yang lalu</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<style>
+        @keyframes shimmer {
+            100% {
+                transform: skewX(-12deg) translateX(100%);
+            }
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="id"><plasmo-csui id="g0-textarea-recorder"></plasmo-csui><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Daftar Project - CircleTask</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "text-soft": "#9A9A9A",
+                        "on-tertiary-fixed": "#1d1b1a",
+                        "background": "#fdf8f8",
+                        "on-secondary-fixed": "#0c1f1a",
+                        "on-tertiary-container": "#868381",
+                        "surface-main": "#FCFAF5",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-container": "#cfe5dc",
+                        "on-surface-variant": "#444748",
+                        "surface-dim": "#ddd9d8",
+                        "primary-fixed": "#e5e2e1",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline": "#747878",
+                        "outline-variant": "#c4c7c7",
+                        "page-bg": "#DDECEA",
+                        "secondary-fixed-dim": "#b6cbc3",
+                        "inverse-primary": "#c8c6c5",
+                        "text-secondary": "#6F6F6F",
+                        "pastel-yellow": "#F8E7A8",
+                        "pastel-lavender": "#E7E0FA",
+                        "on-secondary-fixed-variant": "#374b44",
+                        "surface-container-high": "#ebe7e6",
+                        "secondary-fixed": "#d2e7df",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#4f635c",
+                        "border-subtle": "#E8E2D8",
+                        "inverse-on-surface": "#f4f0ef",
+                        "primary": "#000000",
+                        "surface-container-low": "#f7f3f2",
+                        "shell-bg": "#F7F4EC",
+                        "on-secondary-container": "#536760",
+                        "surface-card": "#FFFFFF",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "tertiary": "#000000",
+                        "surface-variant": "#e5e2e1",
+                        "on-surface": "#1c1b1b",
+                        "pastel-orange": "#F6DFC8",
+                        "text-primary": "#171717",
+                        "tertiary-container": "#1d1b1a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#cac6c3",
+                        "surface": "#fdf8f8",
+                        "pastel-pink": "#F6DCE8",
+                        "tertiary-fixed": "#e6e1df",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#858383",
+                        "on-background": "#1c1b1b",
+                        "mint-strong": "#BFE8D7",
+                        "pastel-blue": "#D9ECF6",
+                        "surface-tint": "#5f5e5e",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fdf8f8",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "surface-container": "#f1edec",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "primary-container": "#1c1b1b",
+                        "inverse-surface": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "3xl": "1.5rem",
+                        "4xl": "2rem"
+                    },
+                    "spacing": {
+                        "sidebar-width": "84px",
+                        "page-padding": "32px",
+                        "section-gap": "24px",
+                        "card-gap": "16px",
+                        "shell-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"],
+                        "heading-sm": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "heading-lg": ["Plus Jakarta Sans"],
+                        "button": ["Plus Jakarta Sans"],
+                        "heading-md": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label": ["12px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "heading-sm": ["18px", { "lineHeight": "1.35", "fontWeight": "600" }],
+                        "display": ["42px", { "lineHeight": "1.15", "fontWeight": "700" }],
+                        "heading-lg": ["30px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "button": ["14px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "heading-md": ["22px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "body": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    },
+                    "boxShadow": {
+                        "soft": "0 10px 40px -10px rgba(0,0,0,0.05)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style data-styled="" data-styled-version="4.3.1"></style></head>
+<body class="bg-page-bg min-h-screen text-text-primary flex justify-center p-4 md:p-8">
+<div class="bg-shell-bg w-full max-w-[1440px] rounded-4xl shadow-soft overflow-hidden flex relative">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-[84px] bg-transparent flex flex-col items-center py-page-padding hidden md:flex" style="position: absolute;">
+<div class="mb-8">
+<div class="w-12 h-12 rounded-full bg-pastel-lavender flex items-center justify-center text-primary font-bold text-lg">C</div>
+</div>
+<div class="flex-1 flex flex-col gap-4 mt-8">
+<a class="flex items-center justify-center text-text-soft hover:text-primary w-12 h-12 mb-4 transition-colors hover:bg-surface-container-high rounded-full group transition-all duration-200 active:scale-95" href="#" title="Dashboard">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+</a>
+<a class="flex items-center justify-center bg-primary text-on-primary rounded-full w-12 h-12 mb-4 transition-all duration-200 active:scale-95 shadow-md" href="#" title="Groups">
+<span class="material-symbols-outlined scale-110">group</span>
+</a>
+<a class="flex items-center justify-center text-text-soft hover:text-primary w-12 h-12 mb-4 transition-colors hover:bg-surface-container-high rounded-full group transition-all duration-200 active:scale-95" href="#" title="Tasks">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">task_alt</span>
+</a>
+<a class="flex items-center justify-center text-text-soft hover:text-primary w-12 h-12 mb-4 transition-colors hover:bg-surface-container-high rounded-full group transition-all duration-200 active:scale-95" href="#" title="Contribution">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">handshake</span>
+</a>
+<a class="flex items-center justify-center text-text-soft hover:text-primary w-12 h-12 mb-4 transition-colors hover:bg-surface-container-high rounded-full group transition-all duration-200 active:scale-95" href="#" title="Activity">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">analytics</span>
+</a>
+<a class="flex items-center justify-center text-text-soft hover:text-primary w-12 h-12 mb-4 transition-colors hover:bg-surface-container-high rounded-full group transition-all duration-200 active:scale-95" href="#" title="Reports">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">bar_chart</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<a class="flex items-center justify-center text-text-soft hover:text-primary w-12 h-12 mb-4 transition-colors hover:bg-surface-container-high rounded-full group transition-all duration-200 active:scale-95" href="#" title="Settings">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">settings</span>
+</a>
+<a class="flex items-center justify-center text-text-soft hover:text-primary w-12 h-12 mb-4 transition-colors hover:bg-surface-container-high rounded-full group transition-all duration-200 active:scale-95" href="#" title="Profile">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">account_circle</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-[84px] bg-surface-main rounded-3xl m-2 md:m-4 overflow-hidden flex flex-col shadow-sm border border-border-subtle relative min-h-[921px]">
+<!-- TopNavBar -->
+<header class="bg-transparent full-width top-0 flex justify-between items-center w-full px-page-padding py-4 z-10 relative">
+<div class="flex items-center gap-4">
+<div class="font-display text-heading-md font-bold text-primary block md:hidden">CircleTask</div>
+<div class="hidden md:flex items-center bg-white rounded-full px-4 py-2 border border-border-subtle shadow-sm w-64 focus-within:ring-2 focus-within:ring-pastel-blue transition-all">
+<span class="material-symbols-outlined text-text-soft mr-2 text-sm">search</span>
+<input class="bg-transparent border-none outline-none text-body-sm w-full text-text-primary placeholder-text-soft p-0 focus:ring-0" placeholder="Cari project..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-text-secondary hover:text-primary transition-colors cursor-pointer transition-transform active:scale-95 border border-border-subtle shadow-sm relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<img alt="User profile photo" class="w-10 h-10 rounded-full object-cover border border-border-subtle shadow-sm cursor-pointer" data-alt="A professional headshot of a young student in a casual modern educational setting, softly lit with warm neutral tones, displaying a friendly expression. Minimalist light background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeyzQn--LgjqIfcnLlAJ9pe3PODhuaT-qTKQo6mq5KAGrm7ZY144WtrRN20o-qH3GfjnS5EgYtz-1WnKivsO6RtizvXbufeJ1cGAOQ6sGvaouOpsCQmlhKr_5dNYvPtnUIHFA8555qHxrGwMKWyeIyhquJ1UiepMP6IUDwWGIPllO0dsRu29tKLAS2vJ2zDrnKrtunVsaMvcMR9JSh4dNaHStaVVQcLIfLBf69NO3uP2EbHMLiQXx9ZTKMIKeETVFwwH533XyXCKit">
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-page-padding flex-1 overflow-y-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-10">
+<div>
+<h1 class="font-heading-lg text-heading-lg text-primary mb-2">Project Kelompok</h1>
+<p class="font-body text-body text-text-secondary">Kelola project besar dan pantau progress task di dalamnya.</p>
+</div>
+<button class="bg-primary text-on-primary font-button text-button px-6 py-3 rounded-full flex items-center gap-2 hover:bg-tertiary-container transition-colors shadow-md active:scale-95">
+<span class="material-symbols-outlined text-sm">add</span>
+                        Buat Project
+                    </button>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-3 mb-8">
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary font-label text-label transition-colors">Semua</button>
+<button class="px-5 py-2 rounded-full bg-white text-text-secondary border border-border-subtle font-label text-label hover:bg-surface-container-high transition-colors">Aktif</button>
+<button class="px-5 py-2 rounded-full bg-white text-text-secondary border border-border-subtle font-label text-label hover:bg-surface-container-high transition-colors">Selesai</button>
+<button class="px-5 py-2 rounded-full bg-white text-text-secondary border border-border-subtle font-label text-label hover:bg-surface-container-high transition-colors">Overdue</button>
+</div>
+<!-- Project Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-card-gap">
+<!-- Card 1 -->
+<div class="bg-pastel-blue rounded-3xl p-6 shadow-sm flex flex-col relative group hover:shadow-md transition-shadow">
+<button class="absolute top-6 right-6 w-8 h-8 rounded-full bg-white/50 flex items-center justify-center text-primary hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<div class="mb-4">
+<span class="inline-block px-3 py-1 bg-white/60 text-primary font-label text-[10px] rounded-full uppercase tracking-wider mb-3">Aktif</span>
+<h3 class="font-heading-md text-heading-sm text-primary mb-1">Website CircleTask</h3>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Deadline 3 hari lagi
+                            </p>
+</div>
+<div class="mt-4 mb-6">
+<div class="flex justify-between font-label text-label text-primary mb-2">
+<span>Progress</span>
+<span>72%</span>
+</div>
+<div class="w-full bg-white/40 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 72%"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant mt-2 text-right">7/10 Done</p>
+</div>
+<div class="mt-auto">
+<button class="w-full py-3 bg-white text-primary font-button text-button rounded-full hover:bg-surface-main transition-colors shadow-sm">Buka Project</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-pastel-pink rounded-3xl p-6 shadow-sm flex flex-col relative group hover:shadow-md transition-shadow">
+<button class="absolute top-6 right-6 w-8 h-8 rounded-full bg-white/50 flex items-center justify-center text-primary hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<div class="mb-4">
+<span class="inline-block px-3 py-1 bg-error/10 text-error font-label text-[10px] rounded-full uppercase tracking-wider mb-3">Overdue</span>
+<h3 class="font-heading-md text-heading-sm text-primary mb-1">Laporan Kontribusi</h3>
+<p class="font-body-sm text-body-sm text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">error</span> Deadline Besok
+                            </p>
+</div>
+<div class="mt-4 mb-6">
+<div class="flex justify-between font-label text-label text-primary mb-2">
+<span>Progress</span>
+<span>48%</span>
+</div>
+<div class="w-full bg-white/40 h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 48%"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant mt-2 text-right">3/6 Done</p>
+</div>
+<div class="mt-auto">
+<button class="w-full py-3 bg-white text-primary font-button text-button rounded-full hover:bg-surface-main transition-colors shadow-sm">Buka Project</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-pastel-yellow rounded-3xl p-6 shadow-sm flex flex-col relative group hover:shadow-md transition-shadow">
+<button class="absolute top-6 right-6 w-8 h-8 rounded-full bg-white/50 flex items-center justify-center text-primary hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<div class="mb-4">
+<span class="inline-block px-3 py-1 bg-white/60 text-primary font-label text-[10px] rounded-full uppercase tracking-wider mb-3">Aktif</span>
+<h3 class="font-heading-md text-heading-sm text-primary mb-1">Presentasi Final</h3>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Deadline 5 hari lagi
+                            </p>
+</div>
+<div class="mt-4 mb-6">
+<div class="flex justify-between font-label text-label text-primary mb-2">
+<span>Progress</span>
+<span>61%</span>
+</div>
+<div class="w-full bg-white/40 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 61%"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant mt-2 text-right">5/8 Done</p>
+</div>
+<div class="mt-auto">
+<button class="w-full py-3 bg-white text-primary font-button text-button rounded-full hover:bg-surface-main transition-colors shadow-sm">Buka Project</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

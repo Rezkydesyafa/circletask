@@ -31,7 +31,7 @@ export function RegisterForm() {
   });
 
   const inputClassName =
-    "h-auto rounded-none border-0 border-b border-gray-300 bg-transparent px-0 py-2 text-sm text-[#111111] ring-offset-0 placeholder:text-gray-400 focus-visible:border-[#111111] focus-visible:ring-0 focus-visible:ring-offset-0";
+    "h-auto rounded-none border-0 border-b border-gray-300 bg-transparent px-0 py-1 text-sm text-[#111111] ring-offset-0 placeholder:text-gray-400 focus-visible:border-[#111111] focus-visible:ring-0 focus-visible:ring-offset-0";
 
   const onSubmit = form.handleSubmit((values) => {
     setSuccessMessage(null);
@@ -67,11 +67,11 @@ export function RegisterForm() {
 
   return (
     <>
-      <form className="space-y-6" onSubmit={onSubmit}>
+      <form className="space-y-2.5" onSubmit={onSubmit}>
       <input type="hidden" {...form.register("avatarUrl")} />
 
       <div>
-        <Label className="mb-1 block text-xs font-medium text-gray-500" htmlFor="fullName">
+        <Label className="mb-0.5 block text-xs font-medium text-gray-500" htmlFor="fullName">
           Nama Lengkap
         </Label>
         <Input
@@ -82,12 +82,12 @@ export function RegisterForm() {
           {...form.register("fullName")}
         />
         {form.formState.errors.fullName ? (
-          <p className="text-sm text-destructive">{form.formState.errors.fullName.message}</p>
+          <p className="text-[11px] text-destructive mt-0.5">{form.formState.errors.fullName.message}</p>
         ) : null}
       </div>
 
       <div>
-        <Label className="mb-1 block text-xs font-medium text-gray-500" htmlFor="email">
+        <Label className="mb-0.5 block text-xs font-medium text-gray-500" htmlFor="email">
           Email
         </Label>
         <Input
@@ -99,35 +99,37 @@ export function RegisterForm() {
           {...form.register("email")}
         />
         {form.formState.errors.email ? (
-          <p className="text-sm text-destructive">{form.formState.errors.email.message}</p>
+          <p className="text-[11px] text-destructive mt-0.5">{form.formState.errors.email.message}</p>
         ) : null}
       </div>
 
-      <div className="relative">
-        <Label className="mb-1 block text-xs font-medium text-gray-500" htmlFor="password">
+      <div>
+        <Label className="mb-0.5 block text-xs font-medium text-gray-500" htmlFor="password">
           Password
         </Label>
-        <Input
-          className={`${inputClassName} pr-10`}
-          id="password"
-          type="password"
-          placeholder="********"
-          autoComplete="new-password"
-          {...form.register("password")}
-        />
-        <button
-          className="absolute right-0 top-6 text-gray-400 transition-colors hover:text-gray-600 focus:outline-none"
-          type="button"
-        >
-          <Eye className="h-5 w-5" />
-        </button>
+        <div className="relative">
+          <Input
+            className={`${inputClassName} pr-10`}
+            id="password"
+            type="password"
+            placeholder="********"
+            autoComplete="new-password"
+            {...form.register("password")}
+          />
+          <button
+            className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 transition-colors hover:text-gray-600 focus:outline-none"
+            type="button"
+          >
+            <Eye className="h-4 w-4" />
+          </button>
+        </div>
         {form.formState.errors.password ? (
-          <p className="text-sm text-destructive">{form.formState.errors.password.message}</p>
+          <p className="text-[11px] text-destructive mt-0.5">{form.formState.errors.password.message}</p>
         ) : null}
       </div>
 
-      <div className="relative">
-        <Label className="mb-1 block text-xs font-medium text-gray-500" htmlFor="confirmPassword">
+      <div>
+        <Label className="mb-0.5 block text-xs font-medium text-gray-500" htmlFor="confirmPassword">
           Konfirmasi Password
         </Label>
         <Input
@@ -139,20 +141,20 @@ export function RegisterForm() {
           {...form.register("confirmPassword")}
         />
         {form.formState.errors.confirmPassword ? (
-          <p className="text-sm text-destructive">
+          <p className="text-[11px] text-destructive mt-0.5">
             {form.formState.errors.confirmPassword.message}
           </p>
         ) : null}
       </div>
 
-      <div className="mt-4 flex items-start">
+      <div className="mt-1 flex items-start">
         <input
-          className="mt-0.5 h-4 w-4 rounded border-gray-300 text-[#111111] focus:ring-[#111111]"
+          className="mt-0.5 h-3.5 w-3.5 rounded border-gray-300 text-[#111111] focus:ring-[#111111]"
           id="terms"
           type="checkbox"
           {...form.register("terms")}
         />
-        <label className="ml-2 block text-xs leading-5 text-gray-600" htmlFor="terms">
+        <label className="ml-2 block text-xs leading-4 text-gray-600" htmlFor="terms">
           Saya setuju dengan{" "}
           <Link className="text-[#111111] hover:underline" href="#">
             syarat dan ketentuan
@@ -160,24 +162,24 @@ export function RegisterForm() {
         </label>
       </div>
       {form.formState.errors.terms ? (
-        <p className="text-sm text-destructive">{form.formState.errors.terms.message}</p>
+        <p className="text-[11px] text-destructive mt-0.5">{form.formState.errors.terms.message}</p>
       ) : null}
 
       {form.formState.errors.root ? (
-        <div className="rounded-2xl border border-destructive/30 bg-destructive/10 px-3 py-2 text-sm text-destructive">
+        <div className="rounded-2xl border border-destructive/30 bg-destructive/10 px-3 py-1.5 text-xs text-destructive">
           {form.formState.errors.root.message}
         </div>
       ) : null}
 
       {successMessage ? (
-        <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm text-emerald-800">
+        <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs text-emerald-800">
           {successMessage}
         </div>
       ) : null}
 
-      <div className="pt-4">
+      <div className="pt-1">
         <Button
-          className="h-auto w-full rounded-full border border-transparent bg-[#111111] px-4 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gray-800 focus-visible:ring-[#111111]"
+          className="h-auto w-full rounded-full border border-transparent bg-[#111111] px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gray-800 focus-visible:ring-[#111111]"
           disabled={isPending}
           type="submit"
         >
@@ -186,7 +188,7 @@ export function RegisterForm() {
       </div>
     </form>
 
-      <div className="mt-6">
+      <div className="mt-3">
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-gray-200" />
@@ -197,14 +199,14 @@ export function RegisterForm() {
         </div>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-3">
         <Button
-          className="h-auto w-full rounded-full border border-gray-200 bg-[#f7f3f2] px-4 py-3 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-100 focus-visible:ring-gray-200"
+          className="h-auto w-full rounded-full border border-gray-200 bg-[#f7f3f2] px-4 py-2 text-sm font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-100 focus-visible:ring-gray-200"
           type="button"
           variant="outline"
         >
           <svg
-            className="mr-2 h-5 w-5"
+            className="mr-2 h-4 w-4"
             fill="none"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -230,7 +232,7 @@ export function RegisterForm() {
         </Button>
       </div>
 
-      <div className="mt-8 text-center text-xs text-gray-500">
+      <div className="mt-4 text-center text-xs text-gray-500">
         Sudah punya akun?{" "}
         <Link href="/login" className="font-semibold text-[#111111] hover:underline">
           Masuk

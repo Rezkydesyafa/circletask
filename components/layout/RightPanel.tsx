@@ -33,7 +33,9 @@ export function RightPanel() {
       </ul>
       
       <div className="mt-auto pt-6 border-t border-border-subtle">
-        <p className="font-body-sm text-body-sm text-text-soft text-center italic">"Satu akun bisa menjadi ketua di satu kelompok dan anggota di kelompok lain."</p>
+        <p className="font-body-sm text-body-sm text-text-soft text-center italic">
+          &quot;Satu akun bisa menjadi ketua di satu kelompok dan anggota di kelompok lain.&quot;
+        </p>
       </div>
     </aside>
   );

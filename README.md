@@ -64,6 +64,8 @@ Validasi setup:
 ```powershell
 pnpm typecheck
 pnpm lint
+pnpm test:unit
+pnpm test:supabase
 pnpm build
 ```
 
@@ -75,6 +77,7 @@ Copy-Item .env.example .env.local
 
 Isi `NEXT_PUBLIC_SUPABASE_URL` dan `NEXT_PUBLIC_SUPABASE_ANON_KEY` sebelum mengaktifkan auth dan akses data Supabase.
 Lihat `supabase/README.md` untuk urutan menjalankan migration dan storage policy.
+`pnpm test:supabase` akan skip otomatis jika env integrasi Supabase belum lengkap.
 
 ## Struktur Folder Rekomendasi
 
